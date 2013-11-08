@@ -22,6 +22,8 @@
 		B21B9FF4182D54B300F8C3EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD8182D54B300F8C3EC /* CoreData.framework */; };
 		B21B9FFC182D54B300F8C3EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B21B9FFA182D54B300F8C3EC /* InfoPlist.strings */; };
 		B21B9FFE182D54B300F8C3EC /* Tom_TutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B21B9FFD182D54B300F8C3EC /* Tom_TutorialTests.m */; };
+		B21BA008182D54DB00F8C3EC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */; };
+		B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B21B9FF9182D54B300F8C3EC /* Tom TutorialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tom TutorialTests-Info.plist"; sourceTree = "<group>"; };
 		B21B9FFB182D54B300F8C3EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B21B9FFD182D54B300F8C3EC /* Tom_TutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tom_TutorialTests.m; sourceTree = "<group>"; };
+		B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		B21BA00A182D5C3800F8C3EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				B21B9FE9182D54B300F8C3EC /* Images.xcassets */,
 				B21B9FE6182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld */,
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
+				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
+				B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */,
 			);
 			path = "Tom Tutorial";
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			files = (
 				B21B9FDF182D54B300F8C3EC /* InfoPlist.strings in Resources */,
 				B21B9FEA182D54B300F8C3EC /* Images.xcassets in Resources */,
+				B21BA008182D54DB00F8C3EC /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +258,7 @@
 				B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */,
 				B21B9FE8182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
+				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +380,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "Tom Tutorial/Tom Tutorial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -385,6 +394,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "Tom Tutorial/Tom Tutorial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,6 +480,16 @@
 			);
 			currentVersion = B21B9FE7182D54B300F8C3EC /* Tom_Tutorial.xcdatamodel */;
 			path = Tom_Tutorial.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B21BA00A182D5C3800F8C3EC /* Model.xcdatamodel */,
+			);
+			currentVersion = B21BA00A182D5C3800F8C3EC /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
