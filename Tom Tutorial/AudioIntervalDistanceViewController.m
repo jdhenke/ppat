@@ -1,20 +1,20 @@
 //
-//  AudioIntervalTimeViewController.m
+//  AudioIntervalDistanceViewController.m
 //  Tom Tutorial
 //
 //  Created by Joseph Henke on 11/10/13.
 //  Copyright (c) 2013 MIT PPAT Team Jonathan. All rights reserved.
 //
 
-#import "AudioIntervalTimeViewController.h"
+#import "AudioIntervalDistanceViewController.h"
 
-@interface AudioIntervalTimeViewController ()
+@interface AudioIntervalDistanceViewController ()
 
 @end
 
-@implementation AudioIntervalTimeViewController
+@implementation AudioIntervalDistanceViewController
 
-@synthesize timeIntervals;
+@synthesize distanceIntervals;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +28,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.timeIntervals = [[NSArray alloc] initWithObjects:
-                         @"No time", @"30 seconds", @"1 minute",@"2 minutes", @"5 minutes",
-                         @"10 minutes",@"15 minutes", @"30 minutes",@"1 hour", @"2 hours",nil];
+    self.distanceIntervals = [[NSArray alloc] initWithObjects:
+                          @"No distance", @"0.25 miles", @"0.5 miles",@"1 mile", @"2 miles",nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,14 +46,13 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return [timeIntervals count];
+    return [distanceIntervals count];
 }
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    return [timeIntervals objectAtIndex:row];
+    return [distanceIntervals objectAtIndex:row];
 }
 
 @end
-    
