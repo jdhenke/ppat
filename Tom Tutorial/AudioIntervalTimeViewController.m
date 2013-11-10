@@ -14,11 +14,16 @@
 
 @implementation AudioIntervalTimeViewController
 
+@synthesize countryNames;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.countryNames = [[NSArray alloc] initWithObjects:
+                             @"Australia (AUD)", @"China (CNY)", @"France (EUR)",
+                             @"Great Britain (GBP)", @"Japan (JPY)", nil];
+
     }
     return self;
 }
@@ -35,4 +40,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return 2;
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return @"Joe";
+//    return [countryNames objectAtIndex:row];
+}
+
 @end
+    
