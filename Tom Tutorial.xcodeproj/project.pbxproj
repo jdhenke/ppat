@@ -24,6 +24,7 @@
 		B21B9FFE182D54B300F8C3EC /* Tom_TutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B21B9FFD182D54B300F8C3EC /* Tom_TutorialTests.m */; };
 		B21BA008182D54DB00F8C3EC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */; };
 		B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */; };
+		B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		B21B9FFD182D54B300F8C3EC /* Tom_TutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tom_TutorialTests.m; sourceTree = "<group>"; };
 		B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		B21BA00A182D5C3800F8C3EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B21BA00E1830125800F8C3EC /* AudioIntervalTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioIntervalTimeViewController.h; sourceTree = "<group>"; };
+		B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioIntervalTimeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
 				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
 				B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */,
+				B21BA00E1830125800F8C3EC /* AudioIntervalTimeViewController.h */,
+				B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */,
 			);
 			path = "Tom Tutorial";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */,
+				B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */,
 				B21B9FE8182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
