@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B357BE183016E5000B0566 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357BD183016E5000B0566 /* Workout.m */; };
 		B21B9FD3182D54B300F8C3EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD2182D54B300F8C3EC /* Foundation.framework */; };
 		B21B9FD5182D54B300F8C3EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */; };
 		B21B9FD7182D54B300F8C3EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD6182D54B300F8C3EC /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21B357BC183016E5000B0566 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		21B357BD183016E5000B0566 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		B21B9FCF182D54B300F8C3EC /* Tom Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tom Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21B9FD2182D54B300F8C3EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
 				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
 				B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */,
+				21B357BC183016E5000B0566 /* Workout.h */,
+				21B357BD183016E5000B0566 /* Workout.m */,
 				B21BA00E1830125800F8C3EC /* AudioIntervalTimeViewController.h */,
 				B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */,
 			);
@@ -265,6 +270,7 @@
 				B21B9FE8182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
+				21B357BE183016E5000B0566 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +473,7 @@
 				B21BA003182D54B300F8C3EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B21BA004182D54B300F8C3EC /* Build configuration list for PBXNativeTarget "Tom TutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +482,7 @@
 				B21BA006182D54B300F8C3EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
