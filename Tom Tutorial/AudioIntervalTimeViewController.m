@@ -14,15 +14,12 @@
 
 @implementation AudioIntervalTimeViewController
 
-@synthesize countryNames;
+@synthesize timeIntervals;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.countryNames = [[NSArray alloc] initWithObjects:
-                             @"Australia (AUD)", @"China (CNY)", @"France (EUR)",
-                             @"Great Britain (GBP)", @"Japan (JPY)", nil];
     }
     return self;
 }
@@ -31,6 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.timeIntervals = [[NSArray alloc] initWithObjects:
+                         @"No time", @"30 seconds", @"1 minute",@"2 minutes", @"5 minutes",
+                         @"10 minutes",@"15 minutes", @"30 minutes",@"1 hour", @"2 hours",nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,14 +47,13 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return 2;
+    return 10;
 }
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    return @"Joe";
-//    return [countryNames objectAtIndex:row];
+    return [timeIntervals objectAtIndex:row];
 }
 
 @end

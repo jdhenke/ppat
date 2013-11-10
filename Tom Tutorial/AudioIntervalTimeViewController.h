@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AudioIntervalTimeViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
-    NSArray            *countryNames;
+    NSArray *timeIntervals;
 }
-@property (strong, nonatomic) NSArray *countryNames;
+@property (strong, nonatomic) NSArray *timeIntervals;
 @end
