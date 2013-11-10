@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21B357BE183016E5000B0566 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357BD183016E5000B0566 /* Workout.m */; };
+		21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C018301894000B0566 /* WorkoutProgressViewController.m */; };
 		B21B9FD3182D54B300F8C3EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD2182D54B300F8C3EC /* Foundation.framework */; };
 		B21B9FD5182D54B300F8C3EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */; };
 		B21B9FD7182D54B300F8C3EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD6182D54B300F8C3EC /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		21B357BC183016E5000B0566 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		21B357BD183016E5000B0566 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		21B357BF18301894000B0566 /* WorkoutProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutProgressViewController.h; sourceTree = "<group>"; };
+		21B357C018301894000B0566 /* WorkoutProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutProgressViewController.m; sourceTree = "<group>"; };
 		B21B9FCF182D54B300F8C3EC /* Tom Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tom Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21B9FD2182D54B300F8C3EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				B21B9FE6182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld */,
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
 				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
+				21B357BF18301894000B0566 /* WorkoutProgressViewController.h */,
+				21B357C018301894000B0566 /* WorkoutProgressViewController.m */,
 				B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */,
 				21B357BC183016E5000B0566 /* Workout.h */,
 				21B357BD183016E5000B0566 /* Workout.m */,
@@ -269,6 +274,7 @@
 				B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */,
 				B21B9FE8182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
+				21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */,
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
 				21B357BE183016E5000B0566 /* Workout.m in Sources */,
 			);

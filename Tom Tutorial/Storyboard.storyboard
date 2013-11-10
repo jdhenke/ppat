@@ -350,10 +350,10 @@
             </objects>
             <point key="canvasLocation" x="941" y="-72"/>
         </scene>
-        <!--View Controller - Workout in Progress-->
+        <!--Workout Progress View Controller - Workout in Progress-->
         <scene sceneID="205-GO-d8U">
             <objects>
-                <viewController id="sWp-0f-xMX" sceneMemberID="viewController">
+                <viewController id="sWp-0f-xMX" customClass="WorkoutProgressViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nth-Rb-aG1"/>
                         <viewControllerLayoutGuide type="bottom" id="XzA-UZ-Srj"/>
