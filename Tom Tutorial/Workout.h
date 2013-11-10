@@ -13,9 +13,9 @@
 @interface Workout : NSManagedObject
 
 @property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSDecimalNumber * avgHeartRate;
+@property (nonatomic, retain) NSNumber * avgHeartRate;
 @property (nonatomic, retain) NSNumber * totalTime;
-@property (nonatomic, retain) UNKNOWN_TYPE note;
-@property (nonatomic, retain) UNKNOWN_TYPE distance;
+@property (nonatomic, retain) NSString * note;
+@property (nonatomic, retain) NSDecimalNumber * distance;
 
 @end
