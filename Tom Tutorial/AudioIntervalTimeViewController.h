@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AudioIntervalTimeViewController : UIViewController
-
+@interface AudioIntervalTimeViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
+    NSArray *timeIntervals;
+}
+@property (strong, nonatomic) NSArray *timeIntervals;
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="DJy-o6-uhR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="DJy-o6-uhR">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
@@ -84,7 +84,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="hSM-6C-0p4" kind="push" id="0fV-gu-BpX"/>
+                                                        <segue destination="hSM-6C-0p4" kind="push" id="vLH-S8-gok"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -112,7 +112,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Previous Workouts" id="b7a-cg-fnk">
                         <barButtonItem key="backBarButtonItem" title="Back" id="YuJ-9t-h7H"/>
-                        <barButtonItem key="leftBarButtonItem" title="Back Home" id="K0e-UE-hny">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="K0e-UE-hny">
                             <connections>
                                 <segue destination="DJy-o6-uhR" kind="modal" id="UE3-Jy-D6h"/>
                             </connections>
@@ -135,20 +135,21 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="yoooo" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLG-pm-zJ2">
-                                <rect key="frame" x="106" y="351" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLG-pm-zJ2">
+                                <rect key="frame" x="63" y="348" width="194" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Workout Notes"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="stuff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-u8-zIH">
-                                <rect key="frame" x="152" y="158" width="34" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average Heartrate: 180 beats per minute" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-u8-zIH">
+                                <rect key="frame" x="7" y="154" width="311" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="more stuff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX3-Ye-tJk">
-                                <rect key="frame" x="130" y="118" width="78" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Elapsed: 0 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX3-Ye-tJk">
+                                <rect key="frame" x="75" y="111" width="189" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -257,7 +258,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Select Metrics for Audio Feedback" id="0RZ-NO-aS1">
                         <barButtonItem key="backBarButtonItem" title="Back!!!" id="n99-pi-uMt"/>
-                        <barButtonItem key="leftBarButtonItem" title="Back Home" id="IPd-ya-brA">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="IPd-ya-brA">
                             <connections>
                                 <segue destination="DJy-o6-uhR" kind="modal" id="DFW-Ie-vK9"/>
                             </connections>
@@ -288,6 +289,10 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pA-15-R3C">
                                 <rect key="frame" x="0.0" y="166" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="v6N-TT-cq1" id="wxC-YA-7cs"/>
+                                    <outlet property="delegate" destination="v6N-TT-cq1" id="mDZ-PX-ofp"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -304,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="1918" y="-884"/>
         </scene>
-        <!--View Controller - Select Distance Interval for Audio Feedback-->
+        <!--Audio Interval Distance View Controller - Select Distance Interval for Audio Feedback-->
         <scene sceneID="XRN-Sx-2lL">
             <objects>
-                <viewController id="yOZ-52-mYO" sceneMemberID="viewController">
+                <viewController id="yOZ-52-mYO" customClass="AudioIntervalDistanceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XxD-Ni-RZm"/>
                         <viewControllerLayoutGuide type="bottom" id="iLl-HS-Y3x"/>
@@ -319,6 +324,10 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-72-hfx">
                                 <rect key="frame" x="0.0" y="171" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yOZ-52-mYO" id="PQp-Ou-M9y"/>
+                                    <outlet property="delegate" destination="yOZ-52-mYO" id="2oc-60-1HK"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -448,7 +457,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DFW-Ie-vK9"/>
+        <segue reference="UE3-Jy-D6h"/>
         <segue reference="KVR-kQ-ycG"/>
     </inferredMetricsTieBreakers>
 </document>

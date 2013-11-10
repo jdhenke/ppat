@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5810C9EA-4778-4DB3-BAF8-79FFB25342DD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tom Tutorial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>77633CB7-E303-49F2-A85C-157D97FE3C11</key>
+		<string>https://github.com/jdhenke/ppat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tom Tutorial.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>77633CB7-E303-49F2-A85C-157D97FE3C11</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jdhenke/ppat.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>77633CB7-E303-49F2-A85C-157D97FE3C11</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>77633CB7-E303-49F2-A85C-157D97FE3C11</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ppat</string>
+		</dict>
+	</array>
+</dict>
+</plist>
