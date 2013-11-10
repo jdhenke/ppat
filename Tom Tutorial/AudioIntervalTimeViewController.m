@@ -23,7 +23,6 @@
         self.countryNames = [[NSArray alloc] initWithObjects:
                              @"Australia (AUD)", @"China (CNY)", @"France (EUR)",
                              @"Great Britain (GBP)", @"Japan (JPY)", nil];
-
     }
     return self;
 }
