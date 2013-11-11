@@ -7,6 +7,7 @@
 //
 
 #import "WorkoutProgressViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface WorkoutProgressViewController ()
 
@@ -29,10 +30,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+
     lastElapsed = 0;
     clock.text = @"Time Elapsed: 00:00";
     [self startClock];
+
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Started"];
+    [av speakUtterance:utterance];
 
 }
 
@@ -45,14 +50,14 @@
 - (void)updateTime
 {
     if (running == false) return;
-    
+
     NSTimeInterval elapsed = [self getTotalTimeElapsed];
-    
+
     int mins = (int) (elapsed / 60.0);
     int secs = (int) (elapsed - mins * 60);
-    
+
     clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
-    
+
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
 
@@ -72,7 +77,7 @@
 {
     running = true;
     startTime = [NSDate timeIntervalSinceReferenceDate];
-    
+
     [self updateTime];
 }
 

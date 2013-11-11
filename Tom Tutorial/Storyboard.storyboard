@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="DJy-o6-uhR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="DJy-o6-uhR">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
@@ -335,6 +335,7 @@
                     <navigationItem key="navigationItem" title="Select Distance Interval for Audio Feedback" id="Q5u-uw-6Sz">
                         <barButtonItem key="rightBarButtonItem" title="Start Workout" id="BM9-Q0-rmp">
                             <connections>
+                                <action selector="read:" destination="yOZ-52-mYO" id="NxP-rb-4k9"/>
                                 <segue destination="HhY-kA-dKu" kind="modal" id="Zrx-XT-wOu"/>
                             </connections>
                         </barButtonItem>
@@ -434,6 +435,9 @@
                                 <state key="normal" title="Hear Stats">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="read:" destination="fVf-4T-fzF" eventType="touchUpInside" id="oac-mi-WFO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u76-CY-O6I">
                                 <rect key="frame" x="117" y="314" width="116" height="44"/>

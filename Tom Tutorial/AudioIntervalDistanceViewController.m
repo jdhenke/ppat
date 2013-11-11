@@ -55,4 +55,6 @@ numberOfRowsInComponent:(NSInteger)component
     return [distanceIntervals objectAtIndex:row];
 }
 
+
+
 @end

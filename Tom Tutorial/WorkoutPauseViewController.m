@@ -7,6 +7,7 @@
 //
 
 #import "WorkoutPauseViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface WorkoutPauseViewController ()
 
@@ -29,6 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Paused"];
+    [av speakUtterance:utterance];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +44,17 @@
 
 - (IBAction)resume:(id)sender
 {
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Resuming Workout"];
+    [av speakUtterance:utterance];
 	[self.delegate workoutPauseViewControllerDidResume:self];
+}
+
+- (IBAction)read:(id)sender
+{
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"how now brown cow - what's good yo? alpha bravo charlie delta."];
+    [av speakUtterance:utterance];
 }
 
 @end
