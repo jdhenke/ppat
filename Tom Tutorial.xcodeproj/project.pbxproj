@@ -29,6 +29,8 @@
 		B21BA008182D54DB00F8C3EC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */; };
 		B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */; };
 		B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */; };
+		B2B56D271831830C00396998 /* ReviewWorkoutsMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B56D261831830C00396998 /* ReviewWorkoutsMainMenuViewController.m */; };
+		B2E7F181183174B40056FEE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E7F180183174B40056FEE5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		B21BA00A182D5C3800F8C3EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B21BA00E1830125800F8C3EC /* AudioIntervalTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioIntervalTimeViewController.h; sourceTree = "<group>"; };
 		B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioIntervalTimeViewController.m; sourceTree = "<group>"; };
+		B2B56D251831830C00396998 /* ReviewWorkoutsMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewWorkoutsMainMenuViewController.h; sourceTree = "<group>"; };
+		B2B56D261831830C00396998 /* ReviewWorkoutsMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewWorkoutsMainMenuViewController.m; sourceTree = "<group>"; };
+		B2E7F180183174B40056FEE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E7F181183174B40056FEE5 /* AVFoundation.framework in Frameworks */,
 				B21B9FD5182D54B300F8C3EC /* CoreGraphics.framework in Frameworks */,
 				B21B9FD9182D54B300F8C3EC /* CoreData.framework in Frameworks */,
 				B21B9FD7182D54B300F8C3EC /* UIKit.framework in Frameworks */,
@@ -122,6 +128,7 @@
 		B21B9FD1182D54B300F8C3EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2E7F180183174B40056FEE5 /* AVFoundation.framework */,
 				B21B9FD2182D54B300F8C3EC /* Foundation.framework */,
 				B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */,
 				B21B9FD6182D54B300F8C3EC /* UIKit.framework */,
@@ -151,6 +158,8 @@
 				B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */,
 				B20433B51830220800308F13 /* AudioIntervalDistanceViewController.h */,
 				B20433B61830220800308F13 /* AudioIntervalDistanceViewController.m */,
+				B2B56D251831830C00396998 /* ReviewWorkoutsMainMenuViewController.h */,
+				B2B56D261831830C00396998 /* ReviewWorkoutsMainMenuViewController.m */,
 			);
 			path = "Tom Tutorial";
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
 				21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */,
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
+				B2B56D271831830C00396998 /* ReviewWorkoutsMainMenuViewController.m in Sources */,
 				21B357BE183016E5000B0566 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,7 +420,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "Tom Tutorial/Tom Tutorial-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -424,7 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "Tom Tutorial/Tom Tutorial-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
