@@ -16,6 +16,7 @@
     NSTimeInterval startTime;
     NSInteger lastElapsed;
     bool running;
+    int timeIntervalReading;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *clock;
