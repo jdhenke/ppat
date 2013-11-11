@@ -14,7 +14,7 @@
 @interface WorkoutProgressViewController : UIViewController <WorkoutPauseViewControllerDelegate>
 {
     NSTimeInterval startTime;
-    NSInteger lastElapsed;
+    NSTimeInterval lastElapsed;
     bool running;
 }
 

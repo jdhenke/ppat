@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * avgHeartRate;
-@property (nonatomic, retain) NSNumber * totalTime;
+@property (nonatomic) NSTimeInterval * totalTime;
 @property (nonatomic, retain) NSString * note;
 @property (nonatomic, retain) NSDecimalNumber * distance;
 

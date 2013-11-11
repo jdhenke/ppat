@@ -92,6 +92,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         WorkoutPauseViewController *workoutPauseViewController = [[navigationController viewControllers] objectAtIndex:0];
         workoutPauseViewController.delegate = self;
+        workoutPauseViewController.timeElapsed = lastElapsed;
     }
 }
 

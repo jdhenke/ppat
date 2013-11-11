@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class WorkoutPauseViewController;
+@class Workout;
 
 @protocol WorkoutPauseViewControllerDelegate <NSObject>
 - (void)workoutPauseViewControllerDidResume:
@@ -19,6 +21,10 @@
 
 @property (nonatomic, weak) id <WorkoutPauseViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UIButton *resumeButton;
+
+@property (nonatomic) NSTimeInterval timeElapsed;
+
+@property (nonatomic, retain) Workout *workout;
 
 - (IBAction)resume:(id)sender;
 
