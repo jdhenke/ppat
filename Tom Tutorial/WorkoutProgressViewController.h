@@ -20,6 +20,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *clock;
+@property (weak, nonatomic) IBOutlet UILabel *heartRate;
 @property (weak, nonatomic) IBOutlet UIButton *pauseOrEndButton;
 
 @end

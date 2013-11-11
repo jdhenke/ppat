@@ -390,7 +390,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart rate = 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tg-jI-FuU">
-                                <rect key="frame" x="101" y="77" width="106" height="21"/>
+                                <rect key="frame" x="54" y="77" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Heart Rate"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -419,6 +419,7 @@
                     <navigationItem key="navigationItem" title="Workout in Progress" id="51r-Gv-vjv"/>
                     <connections>
                         <outlet property="clock" destination="oQ3-Ku-pZo" id="7KY-Z4-IEK"/>
+                        <outlet property="heartRate" destination="4tg-jI-FuU" id="clh-X8-qG9"/>
                         <outlet property="pauseOrEndButton" destination="QYu-aT-bSf" id="nER-kT-byN"/>
                     </connections>
                 </viewController>
