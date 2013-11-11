@@ -8,6 +8,7 @@
 
 #import "WorkoutPauseViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Workout.h"
 
 @interface WorkoutPauseViewController ()
 
@@ -57,6 +58,35 @@
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"how now brown cow - what's good yo? alpha bravo charlie delta."];
     [av speakUtterance:utterance];
+}
+
+- (IBAction)endWorkout:(id)sender
+{
+    // save workout
+}
+
+-(void)saveWorkout
+{
+    //    NSManagedObjectContext *context = [self managedObjectContext];
+    //    NSManagedObject *workout = [NSEntityDescription
+    //                                insertNewObjectForEntityForName:@"Workout"
+    //                                inManagedObjectContext: context];
+    //    [workout setValue:timeElapsed forKey:@"totalTime"];
+    workout.totalTime = &(timeElapsed); // Xcode made me add the &
+    workout.date = [NSDate date];
+    
+    NSError *error = nil;
+    
+	if (![workout.managedObjectContext save:&error]) {
+		/*
+		 Replace this implementation with code to handle the error appropriately.
+		 
+		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		 */
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+    
 }
 
 @end
