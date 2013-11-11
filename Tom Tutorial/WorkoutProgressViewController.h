@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WorkoutProgressViewController : UIViewController
+{
+    NSTimeInterval startTime;
+}
+
+@property (nonatomic, retain) IBOutlet UILabel *clock;
 
 @end
