@@ -11,8 +11,11 @@
 @interface WorkoutProgressViewController : UIViewController
 {
     NSTimeInterval startTime;
+    NSInteger elapsed;
+    bool running;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *clock;
+@property (weak, nonatomic) IBOutlet UILabel *clock;
+@property (weak, nonatomic) IBOutlet UIButton *pauseOrEndButton;
 
 @end

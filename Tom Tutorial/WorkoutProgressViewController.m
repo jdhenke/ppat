@@ -32,7 +32,9 @@
     
     clock.text = @"Time Elapsed: 00:00";
     startTime = [NSDate timeIntervalSinceReferenceDate];
+    running = true;
     
+    [self updateTime];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,18 +43,24 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)updateTime
+- (void)updateTime
 {
+    if (running == false) return;
+    
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - startTime;
+    elapsed = currentTime - startTime; // is it bad to store this in memory every time?
     
     int mins = (int) (elapsed / 60.0);
     int secs = (int) (elapsed - mins * 60);
     
-    clock.text = [NSString stringWithFormat: @"%u:%02u", mins, secs];
+    clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
     
-//[self performSelec]
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
 
+- (void)pauseWorkout
+{
+    running = false;
+}
 
 @end
