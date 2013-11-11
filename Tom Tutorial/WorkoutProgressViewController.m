@@ -30,11 +30,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    lastElapsed = 0;
     clock.text = @"Time Elapsed: 00:00";
-    startTime = [NSDate timeIntervalSinceReferenceDate];
-    running = true;
-    
-    [self updateTime];
+    [self startClock];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,8 +46,7 @@
 {
     if (running == false) return;
     
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    elapsed = currentTime - startTime; // is it bad to store this in memory every time?
+    NSTimeInterval elapsed = [self getTotalTimeElapsed];
     
     int mins = (int) (elapsed / 60.0);
     int secs = (int) (elapsed - mins * 60);
@@ -58,9 +56,44 @@
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
 
-- (void)pauseWorkout
+- (NSTimeInterval)getTotalTimeElapsed
+{
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    return lastElapsed + currentTime - startTime;
+}
+
+- (void)pauseClock
 {
     running = false;
+    lastElapsed = [self getTotalTimeElapsed];
 }
+
+- (void)startClock
+{
+    running = true;
+    startTime = [NSDate timeIntervalSinceReferenceDate];
+    
+    [self updateTime];
+}
+
+- (void)workoutPauseViewControllerDidResume:
+(WorkoutPauseViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self startClock];
+    }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PauseWorkout"])
+    {
+        [self pauseClock];
+        UINavigationController *navigationController = segue.destinationViewController;
+        WorkoutPauseViewController *workoutPauseViewController = [[navigationController viewControllers] objectAtIndex:0];
+        workoutPauseViewController.delegate = self;
+    }
+}
+
 
 @end

@@ -390,7 +390,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fVf-4T-fzF" kind="push" id="sB7-Q2-qzP"/>
+                                    <segue destination="881-mB-InL" kind="modal" identifier="PauseWorkout" id="SHo-DO-sYQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -406,10 +406,10 @@
             </objects>
             <point key="canvasLocation" x="1452" y="-82"/>
         </scene>
-        <!--View Controller-->
+        <!--Workout Pause View Controller-->
         <scene sceneID="9cz-0r-bVD">
             <objects>
-                <viewController id="fVf-4T-fzF" sceneMemberID="viewController">
+                <viewController id="fVf-4T-fzF" customClass="WorkoutPauseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xyP-lm-HYh"/>
                         <viewControllerLayoutGuide type="bottom" id="46k-aC-E8c"/>
@@ -424,6 +424,9 @@
                                 <state key="normal" title="Resume">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resume:" destination="fVf-4T-fzF" eventType="touchUpInside" id="OEy-lp-MG5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xl-qJ-DA8">
                                 <rect key="frame" x="126" y="219" width="98" height="44"/>
@@ -446,10 +449,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cbc-ai-p9g"/>
+                    <connections>
+                        <outlet property="resumeButton" destination="D3Q-se-xQn" id="9Dp-TH-OUg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFW-PH-Ohc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831" y="-62"/>
+            <point key="canvasLocation" x="2357" y="-62"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hm4-Wz-aro">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="881-mB-InL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r69-3u-Fqd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fVf-4T-fzF" kind="relationship" relationship="rootViewController" id="l5x-Vi-ReJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4LA-ad-xvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-72"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
