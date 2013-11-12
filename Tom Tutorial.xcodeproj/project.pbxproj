@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		19C6FAF718318EEA0083B87B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */; };
 		19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF818318EF30083B87B /* CoreBluetooth.framework */; };
-		19C6FAFD18318FBB0083B87B /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAFC18318FBB0083B87B /* WFConnector.framework */; };
 		21B357BE183016E5000B0566 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357BD183016E5000B0566 /* Workout.m */; };
 		21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C018301894000B0566 /* WorkoutProgressViewController.m */; };
 		21B357C51830B7D4000B0566 /* WorkoutPauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C41830B7D4000B0566 /* WorkoutPauseViewController.m */; };
@@ -90,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C6FAFD18318FBB0083B87B /* WFConnector.framework in Frameworks */,
 				19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */,
 				19C6FAF718318EEA0083B87B /* ExternalAccessory.framework in Frameworks */,
 				B2E7F181183174B40056FEE5 /* AVFoundation.framework in Frameworks */,
@@ -433,6 +431,7 @@
 					"$(inherited)",
 					/Users/uid/Documents/ppat_teamJonathan/wf_api_3.0/dependencies,
 					/Users/uid/Documents/ppat_teamJonathan/ppat/wf_api_3.0/dependencies,
+					"/Users/jdhenke/src/Tom\\ Tutorial/wf_api_3.0/dependencies",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
@@ -456,6 +455,7 @@
 					"$(inherited)",
 					/Users/uid/Documents/ppat_teamJonathan/wf_api_3.0/dependencies,
 					/Users/uid/Documents/ppat_teamJonathan/ppat/wf_api_3.0/dependencies,
+					"/Users/jdhenke/src/Tom\\ Tutorial/wf_api_3.0/dependencies",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
