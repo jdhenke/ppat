@@ -53,8 +53,10 @@
 - (IBAction)read:(id)sender
 {
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"how now brown cow - what's good yo? alpha bravo charlie delta."];
-    [av speakUtterance:utterance];
+    AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:@"Time Elapsed: 0 minutes and 30 seconds"];
+    [av speakUtterance:timeUtterance];
+    AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:@"Heart Rate: 0 beats per minute"];
+    [av speakUtterance:HRUtterance];
 }
 
 @end

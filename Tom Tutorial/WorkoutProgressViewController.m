@@ -32,18 +32,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    // Update the heart rate.
-    heartRate.text = @"Heart Rate: 0 beats per minute";
-    
-    // Update the clock.
-    lastElapsed = 0;
-    clock.text = @"Time Elapsed: 00:00";
-    timeIntervalReading = 10;
-    [self startClock];
-
+    // Announce that the workout has started.
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Started"];
     [av speakUtterance:utterance];
+
+    
+    // Update the clock.
+    lastElapsed = 0;
+    clock.text = @"Time Elapsed: 0 seconds";
+    timeIntervalReading = 10;
+    
+    // Update the heart rate.
+    heartRate.text = @"Heart Rate: 0 beats per minute";
+    [self startClock];
+    
 
 }
 
@@ -54,7 +57,7 @@
 }
 
 - (void)updateHeartRate {
-    //heartRate.text = [
+    //TODO(mwchen): Update this when the heart rate monitor is connected.
 }
 
 - (void)updateTime
@@ -66,22 +69,22 @@
     int mins = (int) (elapsed / 60.0);
     int secs = (int) (elapsed - mins * 60);
     
-//    NSLog(@"%d", secs%timeIntervalReading);
+    // If the time is at the time interval specified, read the interval information out loud.
     if (secs%timeIntervalReading ==0) {
         [self readInterval];
     }
 
-    clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
+    clock.text = [NSString stringWithFormat: @"Time Elapsed: %u minutes and %02u seconds", mins, secs];
 
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
 
 - (void)readInterval{
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
-    [av speakUtterance:HRUtterance];
     AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:clock.text];
     [av speakUtterance:timeUtterance];
+    AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
+    [av speakUtterance:HRUtterance];
 }
 
 - (NSTimeInterval)getTotalTimeElapsed
