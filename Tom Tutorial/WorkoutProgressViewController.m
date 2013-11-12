@@ -16,7 +16,7 @@
 
 @implementation WorkoutProgressViewController
 
-@synthesize clock;
+@synthesize clock, heartRate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +32,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    // Update the heart rate.
+    heartRate.text = @"Heart Rate: 0 beats per minute";
+    
+    // Update the clock.
     lastElapsed = 0;
     clock.text = @"Time Elapsed: 00:00";
     timeIntervalReading = 10;
@@ -47,6 +51,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateHeartRate {
+    //heartRate.text = [
 }
 
 - (void)updateTime
@@ -70,8 +78,10 @@
 
 - (void)readInterval{
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:clock.text];
-    [av speakUtterance:utterance];
+    AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
+    [av speakUtterance:HRUtterance];
+    AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:clock.text];
+    [av speakUtterance:timeUtterance];
 }
 
 - (NSTimeInterval)getTotalTimeElapsed

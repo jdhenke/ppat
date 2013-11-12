@@ -35,6 +35,9 @@
                                 <state key="normal" title="Begin Workout Using Last Configuration">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="HhY-kA-dKu" kind="modal" id="AMu-xL-z4d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-7H-bxb">
                                 <rect key="frame" x="64" y="322" width="196" height="30"/>
@@ -44,7 +47,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0gn-m9-Uhn" kind="push" id="mMa-zW-C4I"/>
+                                    <segue destination="0gn-m9-Uhn" kind="push" id="Woa-uL-HNy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -54,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rM8-vr-Uax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="1622"/>
+            <point key="canvasLocation" x="-201" y="1612"/>
         </scene>
         <!--Table View Controller - Review Previous Workouts-->
         <scene sceneID="aQA-jX-U3q">
@@ -346,7 +349,7 @@
                                     <!--2013-11-11 21:10:29 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -364,7 +367,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                         </subviews>
@@ -535,6 +538,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="ySr-YX-XQd">
             <objects>
                 <navigationController definesPresentationContext="YES" id="HhY-kA-dKu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Oa4-ct-tqJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WW9-p0-XCm">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -544,7 +548,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hf-xb-NzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173" y="279"/>
+            <point key="canvasLocation" x="1175" y="-159"/>
         </scene>
         <!--Workout Progress View Controller - Workout in Progress-->
         <scene sceneID="205-GO-d8U">
@@ -559,7 +563,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart rate = 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tg-jI-FuU">
-                                <rect key="frame" x="101" y="77" width="106" height="21"/>
+                                <rect key="frame" x="54" y="77" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Heart Rate"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -588,6 +592,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Workout in Progress" id="51r-Gv-vjv"/>
                     <connections>
                         <outlet property="clock" destination="oQ3-Ku-pZo" id="7KY-Z4-IEK"/>
+                        <outlet property="heartRate" destination="4tg-jI-FuU" id="clh-X8-qG9"/>
                         <outlet property="pauseOrEndButton" destination="QYu-aT-bSf" id="nER-kT-byN"/>
                     </connections>
                 </viewController>
@@ -692,6 +697,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Zrx-XT-wOu"/>
         <segue reference="RyJ-0T-WNS"/>
     </inferredMetricsTieBreakers>
 </document>
