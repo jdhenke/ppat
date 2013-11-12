@@ -15,4 +15,9 @@
 // once the workout is saved it will go in this variable
 // @property(nonatomic, retain) Workout *workout;
 
+
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
+
+- (IBAction)onSave:(id)sender;
+
 @end

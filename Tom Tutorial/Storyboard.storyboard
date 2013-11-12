@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
@@ -78,9 +78,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CR-gk-MEo">
-                                                    <rect key="frame" x="111" y="0.0" width="214" height="44"/>
+                                                    <rect key="frame" x="111" y="0.0" width="170" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Browse Previous Workouts">
+                                                    <state key="normal" title="Browse All Workouts">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -98,9 +98,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-jw-skY">
-                                                    <rect key="frame" x="111" y="0.0" width="198" height="44"/>
+                                                    <rect key="frame" x="111" y="0.0" width="136" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Select Workouts by Date">
+                                                    <state key="normal" title="Browse by Date">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -118,9 +118,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXv-1m-Ugb">
-                                                    <rect key="frame" x="111" y="0.0" width="155" height="44"/>
+                                                    <rect key="frame" x="111" y="0.0" width="147" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Browse by Metrics">
+                                                    <state key="normal" title="Browse by Metric">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -138,9 +138,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqS-IP-RWj">
-                                                    <rect key="frame" x="111" y="0.0" width="182" height="44"/>
+                                                    <rect key="frame" x="111" y="0.0" width="168" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Browse your Averages">
+                                                    <state key="normal" title="Browse by Averages">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="471" y="1839"/>
         </scene>
-        <!--Table View Controller - Previous Workouts-->
+        <!--Table View Controller - Browse All Workouts-->
         <scene sceneID="fbh-3r-LyY">
             <objects>
                 <tableViewController id="ZSb-kW-Dsd" sceneMemberID="viewController">
@@ -223,7 +223,7 @@
                             <outlet property="delegate" destination="ZSb-kW-Dsd" id="gj2-5w-c9n"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Previous Workouts" id="aIH-WK-U1t"/>
+                    <navigationItem key="navigationItem" title="Browse All Workouts" id="aIH-WK-U1t"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-m5-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="2256" y="1103"/>
         </scene>
-        <!--Metric Selector View Controller - Browse by Metrics-->
+        <!--Metric Selector View Controller - Browse by Metric-->
         <scene sceneID="Gxc-Ud-y6x">
             <objects>
                 <viewController id="tGO-B7-XFj" customClass="MetricSelectorViewController" sceneMemberID="viewController">
@@ -341,7 +341,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Browse by Metrics" id="cvc-L2-L4R">
+                    <navigationItem key="navigationItem" title="Browse by Metric" id="cvc-L2-L4R">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="XEa-u9-wiB">
                             <connections>
                                 <segue destination="CaC-Lv-58b" kind="push" id="zp8-PZ-lsw"/>
@@ -541,7 +541,7 @@
             </objects>
             <point key="canvasLocation" x="1761" y="2994"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Browse by Date-->
         <scene sceneID="sGx-nU-6dO">
             <objects>
                 <viewController id="WhV-wm-SpJ" sceneMemberID="viewController">
@@ -553,7 +553,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-6f-v1s">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-6f-v1s">
                                 <rect key="frame" x="0.0" y="230" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="405897029.57755297">
@@ -584,7 +584,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Byd-Wk-B51">
+                    <navigationItem key="navigationItem" title="Browse by Date" id="Byd-Wk-B51">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Vs0-BW-qh4">
                             <connections>
                                 <segue destination="ZSb-kW-Dsd" kind="push" id="RyJ-0T-WNS"/>
@@ -774,14 +774,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart rate = 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tg-jI-FuU">
-                                <rect key="frame" x="54" y="77" width="230" height="21"/>
+                                <rect key="frame" x="40" y="148" width="265" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Heart Rate"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time elapsed = 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ3-Ku-pZo">
-                                <rect key="frame" x="82" y="112" width="179" height="36"/>
+                                <rect key="frame" x="40" y="93" width="234" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Time Elapsed"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -852,6 +852,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <state key="normal" title="End Workout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="sct-Jk-v4M" kind="push" id="pjh-mp-c7i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -864,6 +867,58 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFW-PH-Ohc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2589" y="289"/>
+        </scene>
+        <!--Workout Summary View Controller - Workout Summary-->
+        <scene sceneID="VGG-0P-Zhe">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="sct-Jk-v4M" customClass="WorkoutSummaryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JqV-SL-4mz"/>
+                        <viewControllerLayoutGuide type="bottom" id="IbC-HO-UPu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yi0-yK-xKd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a note..." translatesAutoresizingMaskIntoConstraints="NO" id="SCI-xP-hQA">
+                                <rect key="frame" x="52" y="251" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Time: 15 minutes 38 seconds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yob-ms-djM">
+                                <rect key="frame" x="33" y="70" width="267" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart Rate: 120 beats per minute" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-iJ-D6k">
+                                <rect key="frame" x="39" y="123" width="255" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Workout Summary" id="gr9-Pu-0FE">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="HgE-sa-ObF">
+                            <connections>
+                                <action selector="onSave:" destination="sct-Jk-v4M" id="wGC-Tb-NHO"/>
+                                <segue destination="N1v-Ye-i2r" kind="modal" id="Vrx-Up-UHZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="HgE-sa-ObF" id="wzm-I5-3qH"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3012" y="279"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hm4-Wz-aro">

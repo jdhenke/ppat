@@ -7,6 +7,7 @@
 //
 
 #import "WorkoutSummaryViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface WorkoutSummaryViewController ()
 
@@ -33,6 +34,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onSave:(id)sender
+{
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Saved"];
+    [av speakUtterance:utterance];
 }
 
 @end
