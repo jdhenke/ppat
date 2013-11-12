@@ -118,9 +118,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXv-1m-Ugb">
-                                                    <rect key="frame" x="111" y="0.0" width="147" height="44"/>
+                                                    <rect key="frame" x="111" y="0.0" width="155" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Browse by Metric">
+                                                    <state key="normal" title="Browse by Metrics">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -318,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="2256" y="1103"/>
         </scene>
-        <!--Metric Selector View Controller - Select Metric to Browse By-->
+        <!--Metric Selector View Controller - Browse by Metrics-->
         <scene sceneID="Gxc-Ud-y6x">
             <objects>
                 <viewController id="tGO-B7-XFj" customClass="MetricSelectorViewController" sceneMemberID="viewController">
@@ -341,7 +341,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Metric to Browse By" id="cvc-L2-L4R">
+                    <navigationItem key="navigationItem" title="Browse by Metrics" id="cvc-L2-L4R">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="XEa-u9-wiB">
                             <connections>
                                 <segue destination="CaC-Lv-58b" kind="push" id="zp8-PZ-lsw"/>
