@@ -65,6 +65,9 @@
 - (IBAction)endWorkout:(id)sender
 {
     // save workout
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
+    [av speakUtterance:endUtterance];
 }
 
 -(void)saveWorkout

@@ -28,6 +28,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self onSave];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,8 +42,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onSave:(id)sender
+-(void)onSave
 {
+    NSLog(@"Testing....");
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Saved"];
     [av speakUtterance:utterance];
