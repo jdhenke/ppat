@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--View Controller - Jonathan's Fitness App-->
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZUO-1C-EHz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M5G-8p-BQx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntp-uu-Aek">
@@ -64,7 +64,7 @@
             <objects>
                 <tableViewController id="0gn-m9-Uhn" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lef-Pr-pok">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -169,7 +169,7 @@
             <objects>
                 <tableViewController id="ZSb-kW-Dsd" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BtA-ae-nCg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -234,7 +234,7 @@
             <objects>
                 <tableViewController id="dwO-GY-ao4" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lrg-bI-LdE">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -327,7 +327,7 @@
                         <viewControllerLayoutGuide type="bottom" id="chQ-G8-D1d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cf4-eb-qlk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNb-Hh-RGd">
@@ -341,13 +341,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Browse by Metric" id="cvc-L2-L4R">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="XEa-u9-wiB">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zg3-6h-SHr"/>
+                        <barButtonItem title="Next" id="XEa-u9-wiB">
                             <connections>
                                 <segue destination="CaC-Lv-58b" kind="push" id="zp8-PZ-lsw"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Browse by Metric" id="cvc-L2-L4R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gas-0I-cnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,7 +360,7 @@
             <objects>
                 <tableViewController id="CaC-Lv-58b" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jgt-JB-cvb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -435,14 +437,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Select Metric to Average" id="73k-Sf-cHB">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="qF6-Jf-17L">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oGK-tK-Gwy"/>
+                        <barButtonItem title="Next" id="qF6-Jf-17L">
                             <connections>
                                 <segue destination="PTg-kk-L5X" kind="push" id="wfe-Na-LuT"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Select Metric to Average" id="73k-Sf-cHB"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oq-WY-qQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -535,6 +538,7 @@
                             <outlet property="delegate" destination="PTg-kk-L5X" id="FcM-XI-P7g"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Average for your Metric" id="D9s-Wi-W26"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAy-AN-Eal" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,7 +554,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cjc-hr-tnv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7vi-r3-zsC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-6f-v1s">
@@ -584,13 +588,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Browse by Date" id="Byd-Wk-B51">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="Vs0-BW-qh4">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="e1v-X5-NLO"/>
+                        <barButtonItem title="Next" id="Vs0-BW-qh4">
                             <connections>
                                 <segue destination="ZSb-kW-Dsd" kind="push" id="RyJ-0T-WNS"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Browse by Date" id="Byd-Wk-B51"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6D-Xo-rFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -601,7 +607,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <tableViewController title="Select Metrics" id="BTc-pE-MtX" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3rC-Sv-aT3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -658,13 +664,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="BTc-pE-MtX" id="4RN-Qa-eik"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select Metrics for Audio Feedback" id="0RZ-NO-aS1">
-                        <barButtonItem key="backBarButtonItem" title="Back!!!" id="n99-pi-uMt"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="DgR-Z7-Ii9">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="JVG-ab-CER"/>
+                        <barButtonItem title="Next" id="DgR-Z7-Ii9">
                             <connections>
                                 <segue destination="v6N-TT-cq1" kind="push" id="eEm-3M-ZjA"/>
                             </connections>
                         </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Select Metrics for Audio Feedback" id="0RZ-NO-aS1">
+                        <barButtonItem key="backBarButtonItem" title="Back!!!" id="n99-pi-uMt"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBf-1N-0cM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,7 +689,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="dqM-17-dpJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qw1-zb-JHR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pA-15-R3C">
@@ -697,13 +706,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Time Intervals for Audio Feedback" id="sw0-uo-gsO">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="1G6-Dz-fKg">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="nrB-Ww-eep"/>
+                        <barButtonItem title="Next" id="1G6-Dz-fKg">
                             <connections>
                                 <segue destination="yOZ-52-mYO" kind="push" id="txb-BZ-Bxf"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Select Time Intervals for Audio Feedback" id="sw0-uo-gsO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h2-aN-AC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -718,7 +729,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="iLl-HS-Y3x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rf4-LR-mPv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-72-hfx">
@@ -732,14 +743,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Distance Interval for Audio Feedback" id="Q5u-uw-6Sz">
-                        <barButtonItem key="rightBarButtonItem" title="Start Workout" id="BM9-Q0-rmp">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mb4-Ks-7um"/>
+                        <barButtonItem title="Start Workout" id="BM9-Q0-rmp">
                             <connections>
                                 <action selector="read:" destination="yOZ-52-mYO" id="NxP-rb-4k9"/>
                                 <segue destination="HhY-kA-dKu" kind="modal" id="Zrx-XT-wOu"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Select Distance Interval for Audio Feedback" id="Q5u-uw-6Sz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baN-dP-RVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -820,7 +833,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="46k-aC-E8c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="29N-Qr-vt9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Q-se-xQn">
@@ -878,7 +891,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="IbC-HO-UPu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yi0-yK-xKd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a note..." translatesAutoresizingMaskIntoConstraints="NO" id="SCI-xP-hQA">
@@ -907,14 +920,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout Summary" id="gr9-Pu-0FE">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="HgE-sa-ObF">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ugu-fM-yW4"/>
+                        <barButtonItem title="Save" id="HgE-sa-ObF">
                             <connections>
                                 <action selector="onSave:" destination="sct-Jk-v4M" id="cxz-58-10s"/>
                                 <segue destination="N1v-Ye-i2r" kind="modal" id="Vrx-Up-UHZ"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Workout Summary" id="gr9-Pu-0FE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -923,13 +938,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Navigation Controller-->
         <scene sceneID="Hm4-Wz-aro">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="881-mB-InL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="881-mB-InL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r69-3u-Fqd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BOw-9C-trr">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="fVf-4T-fzF" kind="relationship" relationship="rootViewController" id="l5x-Vi-ReJ"/>
                     </connections>
@@ -941,13 +960,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Navigation Controller-->
         <scene sceneID="kli-b2-4GA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1v-Ye-i2r" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="N1v-Ye-i2r" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5i7-cb-rWh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DUV-7d-bWL">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="DJy-o6-uhR" kind="relationship" relationship="rootViewController" id="pTG-d8-dY9"/>
                     </connections>
@@ -963,8 +986,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="AMu-xL-z4d"/>
-        <segue reference="icW-DS-IIt"/>
+        <segue reference="Zrx-XT-wOu"/>
+        <segue reference="RyJ-0T-WNS"/>
         <segue reference="cGH-9Q-OIg"/>
     </inferredMetricsTieBreakers>
 </document>
