@@ -74,7 +74,24 @@
         [self readInterval];
     }
 
-    clock.text = [NSString stringWithFormat: @"Time Elapsed: %u minutes and %02u seconds", mins, secs];
+    NSString *minuteText;
+    if (mins == 1) {
+        minuteText = [NSString stringWithFormat: @"minute"];
+    } else {
+        minuteText = [NSString stringWithFormat: @"minutes"];
+    }
+
+    NSString *secondText;
+    if (secs == 1) {
+        secondText = [NSString stringWithFormat: @"second"];
+    } else {
+        secondText = [NSString stringWithFormat: @"seconds"];
+    }
+
+    const char *minuteChars = [minuteText UTF8String];
+    const char *secondChars = [secondText UTF8String];
+
+    clock.text = [NSString stringWithFormat: @"Time Elapsed: %u %s and %02u %s", mins, minuteChars, secs, secondChars];
 
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
