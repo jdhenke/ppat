@@ -31,6 +31,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // wait for voiceover to shut up
+    while ([[AVAudioSession sharedInstance] isOtherAudioPlaying]) {
+        // do nothing
+    }
 
     // Announce that the workout has started.
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
@@ -97,6 +102,12 @@
 }
 
 - (void)readInterval{
+    
+    // wait for voiceover to shut up
+    while ([[AVAudioSession sharedInstance] isOtherAudioPlaying]) {
+        // do nothing
+    }
+    
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:clock.text];
     [av speakUtterance:timeUtterance];
