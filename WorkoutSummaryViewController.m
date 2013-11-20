@@ -38,7 +38,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [self onSave];
+    //[self onSave];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,11 +64,21 @@
     [av speakUtterance:utterance];
 }
 
-- (IBAction)onDiscard:(id)sender {
-        // delete the workout here.
-}
-- (IBAction)onSave:(id)sender;
+-(void)onDiscard
 {
-    NSLog(@"do stuff here");
+    NSLog(@"Testing....");
+    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Discarded"];
+    [av speakUtterance:utterance];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"saveSegue"])
+    {
+        [self onSave];
+    } else if ([segue.identifier isEqualToString:@"discardSegue"]) {
+        [self onDiscard];
+    }
 }
 @end

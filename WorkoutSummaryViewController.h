@@ -17,9 +17,4 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *totalTime;
 
-
-
-- (IBAction)onDiscard:(id)sender;
-- (IBAction)onSave:(id)sender;
-
 @end

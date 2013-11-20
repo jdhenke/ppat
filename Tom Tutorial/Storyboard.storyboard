@@ -878,14 +878,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem title="Discard" id="4az-U4-vg4">
                             <connections>
                                 <action selector="onDiscard:" destination="sct-Jk-v4M" id="VYP-Jr-IFp"/>
-                                <segue destination="N1v-Ye-i2r" kind="modal" id="SdT-G9-Ys8"/>
+                                <segue destination="N1v-Ye-i2r" kind="modal" identifier="discardSegue" id="PJA-WZ-7Bt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ugu-fM-yW4"/>
                         <barButtonItem title="Save" id="HgE-sa-ObF">
                             <connections>
                                 <action selector="onSave:" destination="sct-Jk-v4M" id="cxz-58-10s"/>
-                                <segue destination="N1v-Ye-i2r" kind="modal" id="4yW-Xj-bcd"/>
+                                <segue destination="N1v-Ye-i2r" kind="modal" identifier="saveSegue" id="nof-hO-iGV"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -919,7 +919,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rd9-D2-gqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4021" y="364"/>
+            <point key="canvasLocation" x="-773" y="1204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lwu-Kf-1vH">
@@ -951,7 +951,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Zrx-XT-wOu"/>
-        <segue reference="4yW-Xj-bcd"/>
+        <segue reference="nof-hO-iGV"/>
         <segue reference="icW-DS-IIt"/>
         <segue reference="cGH-9Q-OIg"/>
     </inferredMetricsTieBreakers>
