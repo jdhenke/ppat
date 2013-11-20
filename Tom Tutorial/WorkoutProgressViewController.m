@@ -79,7 +79,7 @@
     clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
     
     // If the time is at the time interval specified, read the interval information out loud.
-    if (secs%timeIntervalReading ==0) {
+    if (secs%timeIntervalReading ==0 && secs > 5) {
         [self readIntervalWithTime:elapsed];
     }
     
