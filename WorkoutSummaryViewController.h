@@ -19,7 +19,7 @@
 
 
 
-
-//- (IBAction)onSave:(id)sender;
+- (IBAction)onDiscard:(id)sender;
+- (IBAction)onSave:(id)sender;
 
 @end

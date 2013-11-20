@@ -808,7 +808,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </state>
                                 <connections>
                                     <action selector="endWorkout:" destination="sWp-0f-xMX" eventType="touchUpInside" id="lfE-JT-avq"/>
-                                    <segue destination="sct-Jk-v4M" kind="push" identifier="EndWorkout" id="s1J-WQ-EXv"/>
+                                    <segue destination="FpO-G8-l8Y" kind="modal" identifier="EndWorkout" id="H5a-1c-ygB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDI-Si-wFl">
@@ -833,18 +833,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2T-UC-LIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="269"/>
+            <point key="canvasLocation" x="2454" y="245"/>
         </scene>
         <!--Workout Summary View Controller - Workout Summary-->
         <scene sceneID="VGG-0P-Zhe">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sct-Jk-v4M" customClass="WorkoutSummaryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JqV-SL-4mz"/>
                         <viewControllerLayoutGuide type="bottom" id="IbC-HO-UPu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yi0-yK-xKd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a note..." translatesAutoresizingMaskIntoConstraints="NO" id="SCI-xP-hQA">
@@ -874,28 +875,35 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
+                        <barButtonItem title="Discard" id="4az-U4-vg4">
+                            <connections>
+                                <action selector="onDiscard:" destination="sct-Jk-v4M" id="VYP-Jr-IFp"/>
+                                <segue destination="N1v-Ye-i2r" kind="modal" id="SdT-G9-Ys8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ugu-fM-yW4"/>
                         <barButtonItem title="Save" id="HgE-sa-ObF">
                             <connections>
                                 <action selector="onSave:" destination="sct-Jk-v4M" id="cxz-58-10s"/>
-                                <segue destination="N1v-Ye-i2r" kind="modal" id="Vrx-Up-UHZ"/>
+                                <segue destination="N1v-Ye-i2r" kind="modal" id="4yW-Xj-bcd"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Workout Summary" id="gr9-Pu-0FE"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="totalTime" destination="yob-ms-djM" id="jgK-SW-rZq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="281"/>
+            <point key="canvasLocation" x="3536" y="281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kli-b2-4GA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="N1v-Ye-i2r" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gFp-vZ-myJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5i7-cb-rWh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -911,7 +919,29 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rd9-D2-gqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-887" y="1612"/>
+            <point key="canvasLocation" x="4021" y="364"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lwu-Kf-1vH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="FpO-G8-l8Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2kh-iL-RSb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="0Ur-ga-Pk2">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="sct-Jk-v4M" kind="relationship" relationship="rootViewController" id="kyb-KF-d5R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UM8-tK-TdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3010" y="281"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -920,7 +950,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="AMu-xL-z4d"/>
+        <segue reference="Zrx-XT-wOu"/>
+        <segue reference="4yW-Xj-bcd"/>
         <segue reference="icW-DS-IIt"/>
         <segue reference="cGH-9Q-OIg"/>
     </inferredMetricsTieBreakers>

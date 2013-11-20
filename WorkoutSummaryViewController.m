@@ -50,7 +50,6 @@
 // TODO: put this in a helper file?
 - (NSString *)stringFromTimeInterval:(NSNumber *)interval {
     NSInteger ti = [interval integerValue];
-    NSLog(@"ti: %ld", (long)ti);
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600);
@@ -65,10 +64,11 @@
     [av speakUtterance:utterance];
 }
 
--(void)saveWorkout
-{
-    // add notes?
-    
+- (IBAction)onDiscard:(id)sender {
+        // delete the workout here.
 }
-
+- (IBAction)onSave:(id)sender;
+{
+    NSLog(@"do stuff here");
+}
 @end

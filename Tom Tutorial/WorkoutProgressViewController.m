@@ -183,11 +183,11 @@
     if ([segue.identifier isEqualToString:@"EndWorkout"])
     {
         // TODO: should it be embedded in NavigationController so it's a modal?
-//        UINavigationController *navigationController = segue.destinationViewController;
-//        WorkoutSummaryViewController *workoutSummaryViewController = [[navigationController viewControllers] objectAtIndex:0];
+        UINavigationController *navigationController = segue.destinationViewController;
+        WorkoutSummaryViewController *workoutSummaryViewController = [[navigationController viewControllers] objectAtIndex:0];
         
         // pass the workout into next controller
-        WorkoutSummaryViewController *workoutSummaryViewController = (WorkoutSummaryViewController *)segue.destinationViewController;
+//        WorkoutSummaryViewController *workoutSummaryViewController = (WorkoutSummaryViewController *)segue.destinationViewController;
         workoutSummaryViewController.workout = [self createWorkout];
     }
 }
@@ -198,11 +198,9 @@
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
     NSManagedObject *workout = [NSEntityDescription
                                 insertNewObjectForEntityForName:@"Workout" inManagedObjectContext:context];
-    NSLog(@"time Interval: %f", [self getTotalTimeElapsed]);
     NSNumber *totalTime = [NSNumber numberWithDouble:[self getTotalTimeElapsed]];
-    NSLog(@"NSNumber: %@", totalTime);
+    
     [workout setValue:totalTime forKey:@"totalTime"];
-//    [workout setValue:[self getTotalTimeElapsed] forKey:@"totalTime"];
     [workout setValue:[NSDate date] forKey:@"date"];
     NSError *error = nil;
     
