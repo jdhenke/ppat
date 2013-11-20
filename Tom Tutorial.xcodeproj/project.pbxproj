@@ -11,7 +11,6 @@
 		19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF818318EF30083B87B /* CoreBluetooth.framework */; };
 		21B357BE183016E5000B0566 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357BD183016E5000B0566 /* Workout.m */; };
 		21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C018301894000B0566 /* WorkoutProgressViewController.m */; };
-		21B357C51830B7D4000B0566 /* WorkoutPauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C41830B7D4000B0566 /* WorkoutPauseViewController.m */; };
 		21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */; };
 		B20433B71830220800308F13 /* AudioIntervalDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20433B61830220800308F13 /* AudioIntervalDistanceViewController.m */; };
 		B21B9FD3182D54B300F8C3EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD2182D54B300F8C3EC /* Foundation.framework */; };
@@ -21,7 +20,6 @@
 		B21B9FDF182D54B300F8C3EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B21B9FDD182D54B300F8C3EC /* InfoPlist.strings */; };
 		B21B9FE1182D54B300F8C3EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21B9FE0182D54B300F8C3EC /* main.m */; };
 		B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B21B9FE4182D54B300F8C3EC /* AppDelegate.m */; };
-		B21B9FE8182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21B9FE6182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld */; };
 		B21B9FEA182D54B300F8C3EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21B9FE9182D54B300F8C3EC /* Images.xcassets */; };
 		B21B9FF1182D54B300F8C3EC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FF0182D54B300F8C3EC /* XCTest.framework */; };
 		B21B9FF2182D54B300F8C3EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD2182D54B300F8C3EC /* Foundation.framework */; };
@@ -54,8 +52,6 @@
 		21B357BC183016E5000B0566 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		21B357BD183016E5000B0566 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		21B357C018301894000B0566 /* WorkoutProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutProgressViewController.m; sourceTree = "<group>"; };
-		21B357C31830B7D3000B0566 /* WorkoutPauseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutPauseViewController.h; sourceTree = "<group>"; };
-		21B357C41830B7D4000B0566 /* WorkoutPauseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutPauseViewController.m; sourceTree = "<group>"; };
 		21B357C61830C061000B0566 /* WorkoutProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutProgressViewController.h; sourceTree = "<group>"; };
 		21B357C71832C58F000B0566 /* WorkoutSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutSummaryViewController.h; path = ../WorkoutSummaryViewController.h; sourceTree = "<group>"; };
 		21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSummaryViewController.m; path = ../WorkoutSummaryViewController.m; sourceTree = "<group>"; };
@@ -72,7 +68,6 @@
 		B21B9FE2182D54B300F8C3EC /* Tom Tutorial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tom Tutorial-Prefix.pch"; sourceTree = "<group>"; };
 		B21B9FE3182D54B300F8C3EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B21B9FE4182D54B300F8C3EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B21B9FE7182D54B300F8C3EC /* Tom_Tutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tom_Tutorial.xcdatamodel; sourceTree = "<group>"; };
 		B21B9FE9182D54B300F8C3EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B21B9FEF182D54B300F8C3EC /* Tom TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tom TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21B9FF0182D54B300F8C3EC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -160,13 +155,10 @@
 				B21B9FE3182D54B300F8C3EC /* AppDelegate.h */,
 				B21B9FE4182D54B300F8C3EC /* AppDelegate.m */,
 				B21B9FE9182D54B300F8C3EC /* Images.xcassets */,
-				B21B9FE6182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld */,
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
 				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
 				21B357C71832C58F000B0566 /* WorkoutSummaryViewController.h */,
 				21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */,
-				21B357C31830B7D3000B0566 /* WorkoutPauseViewController.h */,
-				21B357C41830B7D4000B0566 /* WorkoutPauseViewController.m */,
 				21B357C61830C061000B0566 /* WorkoutProgressViewController.h */,
 				21B357C018301894000B0566 /* WorkoutProgressViewController.m */,
 				B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */,
@@ -310,11 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */,
-				21B357C51830B7D4000B0566 /* WorkoutPauseViewController.m in Sources */,
 				B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */,
 				B20433B71830220800308F13 /* AudioIntervalDistanceViewController.m in Sources */,
 				B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */,
-				B21B9FE8182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
 				21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */,
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
@@ -553,16 +543,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B21B9FE6182D54B300F8C3EC /* Tom_Tutorial.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B21B9FE7182D54B300F8C3EC /* Tom_Tutorial.xcdatamodel */,
-			);
-			currentVersion = B21B9FE7182D54B300F8C3EC /* Tom_Tutorial.xcdatamodel */;
-			path = Tom_Tutorial.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

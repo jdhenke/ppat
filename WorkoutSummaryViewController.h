@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class Workout;
+#import "Workout.h"
 
 @interface WorkoutSummaryViewController : UIViewController
 
-// once the workout is saved it will go in this variable
-// @property(nonatomic, retain) Workout *workout;
-
+@property(nonatomic, retain) Workout *workout;
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *totalTime;
+
+
+
 
 //- (IBAction)onSave:(id)sender;
 

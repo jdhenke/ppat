@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WorkoutPauseViewController.h"
+#import "WorkoutSummaryViewController.h"
 
 @class WorkoutProgressViewController;
 
-@interface WorkoutProgressViewController : UIViewController <WorkoutPauseViewControllerDelegate>
+@interface WorkoutProgressViewController : UIViewController
 {
     NSTimeInterval startTime;
     NSTimeInterval lastElapsed;
@@ -21,6 +21,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *clock;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
-@property (weak, nonatomic) IBOutlet UIButton *pauseOrEndButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;
+
+- (IBAction)pauseOrResumeWorkout:(id)sender;
+- (IBAction)endWorkout:(id)sender;
+
 
 @end

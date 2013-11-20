@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--View Controller - Jonathan's Fitness App-->
@@ -756,7 +756,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baN-dP-RVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460" y="-884"/>
+            <point key="canvasLocation" x="2454" y="-884"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ySr-YX-XQd">
@@ -800,14 +800,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYu-aT-bSf">
-                                <rect key="frame" x="69" y="361" width="182" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyl-cp-Cdy">
+                                <rect key="frame" x="186" y="361" width="70" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pause or End Workout">
+                                <state key="normal" title="End">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="881-mB-InL" kind="modal" identifier="PauseWorkout" id="SHo-DO-sYQ"/>
+                                    <action selector="endWorkout:" destination="sWp-0f-xMX" eventType="touchUpInside" id="lfE-JT-avq"/>
+                                    <segue destination="sct-Jk-v4M" kind="push" identifier="EndWorkout" id="s1J-WQ-EXv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDI-Si-wFl">
+                                <rect key="frame" x="78" y="361" width="70" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseOrResumeWorkout:" destination="sWp-0f-xMX" eventType="touchUpInside" id="65Q-7S-cgK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -817,70 +828,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="clock" destination="oQ3-Ku-pZo" id="7KY-Z4-IEK"/>
                         <outlet property="heartRate" destination="4tg-jI-FuU" id="clh-X8-qG9"/>
-                        <outlet property="pauseOrEndButton" destination="QYu-aT-bSf" id="nER-kT-byN"/>
+                        <outlet property="pauseResumeButton" destination="yDI-Si-wFl" id="c7v-X9-8hI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2T-UC-LIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1684" y="269"/>
-        </scene>
-        <!--Workout Pause View Controller-->
-        <scene sceneID="9cz-0r-bVD">
-            <objects>
-                <viewController id="fVf-4T-fzF" customClass="WorkoutPauseViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xyP-lm-HYh"/>
-                        <viewControllerLayoutGuide type="bottom" id="46k-aC-E8c"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="29N-Qr-vt9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Q-se-xQn">
-                                <rect key="frame" x="134" y="125" width="82" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="Resume"/>
-                                <state key="normal" title="Resume">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="resume:" destination="fVf-4T-fzF" eventType="touchUpInside" id="OEy-lp-MG5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xl-qJ-DA8">
-                                <rect key="frame" x="126" y="219" width="98" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="Hear Stats"/>
-                                <state key="normal" title="Hear Stats">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="read:" destination="fVf-4T-fzF" eventType="touchUpInside" id="oac-mi-WFO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u76-CY-O6I">
-                                <rect key="frame" x="117" y="314" width="116" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="End Workout"/>
-                                <state key="normal" title="End Workout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="endWorkout:" destination="fVf-4T-fzF" eventType="touchUpInside" id="pw3-PQ-KnK"/>
-                                    <segue destination="sct-Jk-v4M" kind="push" id="pjh-mp-c7i"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="cbc-ai-p9g"/>
-                    <connections>
-                        <outlet property="resumeButton" destination="D3Q-se-xQn" id="9Dp-TH-OUg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NFW-PH-Ohc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2589" y="289"/>
         </scene>
         <!--Workout Summary View Controller - Workout Summary-->
         <scene sceneID="VGG-0P-Zhe">
@@ -891,7 +844,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="IbC-HO-UPu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yi0-yK-xKd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a note..." translatesAutoresizingMaskIntoConstraints="NO" id="SCI-xP-hQA">
@@ -930,32 +883,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Workout Summary" id="gr9-Pu-0FE"/>
+                    <connections>
+                        <outlet property="totalTime" destination="yob-ms-djM" id="jgK-SW-rZq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="279"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Hm4-Wz-aro">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="881-mB-InL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r69-3u-Fqd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BOw-9C-trr">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="fVf-4T-fzF" kind="relationship" relationship="rootViewController" id="l5x-Vi-ReJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4LA-ad-xvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2106" y="279"/>
+            <point key="canvasLocation" x="2484" y="281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kli-b2-4GA">
@@ -986,8 +920,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cGH-9Q-OIg"/>
+        <segue reference="AMu-xL-z4d"/>
         <segue reference="icW-DS-IIt"/>
-        <segue reference="Zrx-XT-wOu"/>
+        <segue reference="cGH-9Q-OIg"/>
     </inferredMetricsTieBreakers>
 </document>
