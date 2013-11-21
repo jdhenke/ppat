@@ -88,7 +88,7 @@
             reuseIdentifier:CellIdentifier];
     }
     
-    Workout *workout = [workouts objectAtIndex:indexPath.row];
+    Workout *workout = [workouts objectAtIndex:[self.workouts count] - 1 - indexPath.row];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yy HH:mm"];
