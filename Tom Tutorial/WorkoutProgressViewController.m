@@ -48,10 +48,12 @@
     // Update the clock.
     lastElapsed = 0;
     clock.text = @"Time Elapsed: 0 seconds";
+    clock.accessibilityLabel = clock.text;
     timeIntervalReading = 10;
     
     // Update the heart rate.
-    heartRate.text = @"Heart Rate: 0 beats per minute";
+    heartRate.text = @"Heart Rate: 80 beats per minute";
+    heartRate.accessibilityLabel = heartRate.text;
     [self startClock];
     
     self.pauseResumeButton.accessibilityLabel = @"Pause";
@@ -79,6 +81,7 @@
     int secs = (int) (elapsed - mins * 60);
     
     clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
+    clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
     if (secs%timeIntervalReading ==0 && secs > 5) {
@@ -94,7 +97,7 @@
     int secs = (int) (elapsed - mins * 60);
     
     NSString *minuteText;
-    if (mins == 1) {
+    if (mins <= 1) {
         minuteText = [NSString stringWithFormat: @"minute"];
     } else {
         minuteText = [NSString stringWithFormat: @"minutes"];
