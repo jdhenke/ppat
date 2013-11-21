@@ -9,6 +9,7 @@
 #import "WorkoutSummaryViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Workout.h"
+#import "AppDelegate.h"
 
 @interface WorkoutSummaryViewController ()
 
@@ -53,7 +54,7 @@
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600);
-    return [NSString stringWithFormat:@"Total time: %02i:%02i:%02i", hours, minutes, seconds];
+    return [NSString stringWithFormat:@"Total time: %02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
 }
 
 -(void)onSave

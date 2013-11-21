@@ -10,7 +10,7 @@
 
 @implementation PreviousWorkoutCell
 
-@synthesize workoutButton;
+@synthesize workoutHeader;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

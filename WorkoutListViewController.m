@@ -7,6 +7,8 @@
 //
 
 #import "WorkoutListViewController.h"
+#import "Workout.h"
+#import "AppDelegate.h"
 
 @interface WorkoutListViewController ()
 
@@ -29,10 +31,23 @@
 {
     [super viewDidLoad];
     
-    self.workouts = [[NSArray alloc]
-     initWithObjects:@"Alpha",
-     @"Bravo",
-     @"Charlie", nil];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Workout"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.workouts = [context executeFetchRequest:fetchRequest error:&error];
+
+    
+//    self.workouts = [[NSArray alloc]
+//     initWithObjects:@"Alpha",
+//     @"Bravo",
+//     @"Charlie", nil];
+    
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -65,21 +80,22 @@
     
     PreviousWorkoutCell *cell = [tableView
                               dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[PreviousWorkoutCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-    }
-    [cell.workoutButton setTitle: [self.workouts objectAtIndex: [indexPath row]] forState:UIControlStateNormal];
+    
+    Workout *workout = [workouts objectAtIndex:indexPath.row];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat: @"MM/dd/yy HH:mm"];
+    NSString *stringFromDate = [formatter stringFromDate:workout.date];
+    cell.workoutHeader.text = stringFromDate;
+    
 //    if (cell == nil) {
-//        cell = [[CarTableViewCell alloc]
+//        cell = [[PreviousWorkoutCell alloc]
 //                initWithStyle:UITableViewCellStyleDefault
 //                reuseIdentifier:CellIdentifier];
 //    }
+//    [cell.workoutButton setTitle: [self.workouts objectAtIndex: [indexPath row]] forState:UIControlStateNormal];
+//    
     
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
     
     return cell;
 }

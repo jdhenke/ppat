@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PreviousWorkoutCell : UITableViewCell
-@property (nonatomic, strong) IBOutlet UIButton *workoutButton;
+@property (nonatomic, strong) IBOutlet UILabel *workoutHeader;
 @end
