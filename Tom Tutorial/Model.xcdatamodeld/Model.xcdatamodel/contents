@@ -7,7 +7,12 @@
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalTime" optional="YES" attributeType="Double" valueTransformerName="" defaultValueString="0.0" syncable="YES"/>
     </entity>
+    <entity name="WorkoutSettings" syncable="YES">
+        <attribute name="distanceAudioInterval" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timeAudioInterval" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="WorkoutSettings" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
