@@ -167,12 +167,12 @@
 {
     if (running) {
         [self pauseWorkout];
-        [self.pauseResumeButton setTitle:@"Resume" forState:UIControlStateNormal];
-        self.pauseResumeButton.accessibilityLabel = @"Resume";
+        [self.pauseResumeButton setTitle:@"Resume Workout" forState:UIControlStateNormal];
+        self.pauseResumeButton.accessibilityLabel = @"Resume Workout";
     } else {
         [self resumeWorkout];
-        [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
-        self.pauseResumeButton.accessibilityLabel = @"Pause";
+        [self.pauseResumeButton setTitle:@"Pause Workout" forState:UIControlStateNormal];
+        self.pauseResumeButton.accessibilityLabel = @"Pause Workout";
     }
 }
 

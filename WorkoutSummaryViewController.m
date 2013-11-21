@@ -67,7 +67,7 @@
 {
     // TODO: discard workout here
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Discarded"];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Deleted"];
     [av speakUtterance:utterance];
 }
 
