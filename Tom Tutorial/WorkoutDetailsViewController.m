@@ -8,7 +8,7 @@
 
 #import "WorkoutDetailsViewController.h"
 #import "Workout.h"
-//#import "SpeakableTime.h"
+#import "SpeakableTime.h"
 
 @interface WorkoutDetailsViewController ()
 
@@ -36,6 +36,8 @@
     NSString *stringFromDate = [formatter stringFromDate:self.selectedWorkout.date];
     self.dateLabel.text = stringFromDate;
     self.totalTimeLabel.text = [self.selectedWorkout getDisplayTime];
+    SpeakableTime *spokenTime = [[SpeakableTime alloc] initWithTime:[self.selectedWorkout.totalTime doubleValue]];
+    self.totalTimeLabel.accessibilityLabel = [spokenTime getSpokenTimeString];
     
     // VoiceOver for the Date says it in the full format.
     [formatter setDateStyle:NSDateFormatterLongStyle];

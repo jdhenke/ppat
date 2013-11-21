@@ -12,22 +12,34 @@
 	<dict>
 		<key>77633CB7-E303-49F2-A85C-157D97FE3C11</key>
 		<string>https://github.com/jdhenke/ppat.git</string>
+		<key>D4060FEC-DAC4-4D69-A2EC-EBA77E7FCBE2</key>
+		<string>https://github.com/jenkliu/coffeemate.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Tom Tutorial.xcodeproj/project.xcworkspace</string>
+	<string>ppat/Tom Tutorial.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>77633CB7-E303-49F2-A85C-157D97FE3C11</key>
 		<string>../..</string>
+		<key>D4060FEC-DAC4-4D69-A2EC-EBA77E7FCBE2</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jdhenke/ppat.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>77633CB7-E303-49F2-A85C-157D97FE3C11</string>
+	<string>D4060FEC-DAC4-4D69-A2EC-EBA77E7FCBE2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D4060FEC-DAC4-4D69-A2EC-EBA77E7FCBE2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Development</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
