@@ -54,6 +54,8 @@
     heartRate.text = @"Heart Rate: 0 beats per minute";
     [self startClock];
     
+    self.pauseResumeButton.accessibilityLabel = @"Pause";
+    
 
 }
 
@@ -163,9 +165,11 @@
     if (running) {
         [self pauseWorkout];
         [self.pauseResumeButton setTitle:@"Resume" forState:UIControlStateNormal];
+        self.pauseResumeButton.accessibilityLabel = @"Resume";
     } else {
         [self resumeWorkout];
         [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        self.pauseResumeButton.accessibilityLabel = @"Pause";
     }
 }
 

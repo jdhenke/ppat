@@ -37,11 +37,6 @@
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    //[self onSave];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
