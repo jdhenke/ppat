@@ -38,6 +38,11 @@
     self.dateLabel.text = stringFromDate;
     self.totalTimeLabel.text = [self.selectedWorkout getDisplayTime];
     
+    // VoiceOver for the Date says it in the full format.
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *dateLabel =[formatter stringFromDate:self.selectedWorkout.date];
+    NSLog(@"%@", dateLabel);
+    self.dateLabel.accessibilityLabel = dateLabel;
 }
 
 - (void)viewDidLoad
