@@ -7,7 +7,6 @@
 //
 
 #import "WorkoutDetailsViewController.h"
-#import "WorkoutDetails.h"
 #import "Workout.h"
 //#import "SpeakableTime.h"
 

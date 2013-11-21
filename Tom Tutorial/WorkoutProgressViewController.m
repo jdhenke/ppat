@@ -34,10 +34,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // wait for voiceover to shut up
-    while ([[AVAudioSession sharedInstance] isOtherAudioPlaying]) {
-        // do nothing
-    }
+//    // wait for voiceover to shut up
+//    while ([[AVAudioSession sharedInstance] isOtherAudioPlaying]) {
+//        // do nothing
+//    }
 
     // Announce that the workout has started.
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
