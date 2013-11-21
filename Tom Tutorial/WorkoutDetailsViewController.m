@@ -34,16 +34,18 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yy"];
     NSString *stringFromDate = [formatter stringFromDate:self.selectedWorkout.date];
-    self.dateLabel.text = stringFromDate;
-    self.totalTimeLabel.text = [self.selectedWorkout getDisplayTime];
+    self.dateLabel.text = [NSString stringWithFormat: @"Date: %@", stringFromDate];
+    self.totalTimeLabel.text = [NSString stringWithFormat: @"Time: %@", [self.selectedWorkout getDisplayTime]];
+    
+    // Voiceover correct time format
     SpeakableTime *spokenTime = [[SpeakableTime alloc] initWithTime:[self.selectedWorkout.totalTime doubleValue]];
-    self.totalTimeLabel.accessibilityLabel = [spokenTime getSpokenTimeString];
+    self.totalTimeLabel.accessibilityLabel = [NSString stringWithFormat: @"Time: %@", [spokenTime getSpokenTimeString]];
     
     // VoiceOver for the Date says it in the full format.
     [formatter setDateStyle:NSDateFormatterLongStyle];
     NSString *dateLabel =[formatter stringFromDate:self.selectedWorkout.date];
     NSLog(@"%@", dateLabel);
-    self.dateLabel.accessibilityLabel = dateLabel;
+    self.dateLabel.accessibilityLabel = [NSString stringWithFormat: @"Date: %@", dateLabel];
 }
 
 - (void)viewDidLoad
