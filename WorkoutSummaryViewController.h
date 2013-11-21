@@ -13,8 +13,6 @@
 
 @property(nonatomic, retain) Workout *workout;
 
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
-
 @property (weak, nonatomic) IBOutlet UILabel *totalTime;
 
 @end

@@ -59,7 +59,6 @@
 
 -(void)onSave
 {
-    NSLog(@"Testing....");
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Saved"];
     [av speakUtterance:utterance];
@@ -67,7 +66,7 @@
 
 -(void)onDiscard
 {
-    NSLog(@"Testing....");
+    // TODO: discard workout here
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Discarded"];
     [av speakUtterance:utterance];

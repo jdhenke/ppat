@@ -18,4 +18,6 @@
 @property (nonatomic, retain) NSString * note;
 @property (nonatomic, retain) NSDecimalNumber * distance;
 
+- (NSString *) getDisplayTime;
+
 @end

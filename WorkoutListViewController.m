@@ -9,6 +9,7 @@
 #import "WorkoutListViewController.h"
 #import "Workout.h"
 #import "AppDelegate.h"
+#import "WorkoutDetailsViewController.h"
 
 @interface WorkoutListViewController ()
 
@@ -80,6 +81,12 @@
     
     PreviousWorkoutCell *cell = [tableView
                               dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    if (cell == nil) {
+        cell = [[PreviousWorkoutCell alloc]
+        initWithStyle:UITableViewCellStyleDefault
+            reuseIdentifier:CellIdentifier];
+    }
     
     Workout *workout = [workouts objectAtIndex:indexPath.row];
     
@@ -87,17 +94,15 @@
     [formatter setDateFormat: @"MM/dd/yy HH:mm"];
     NSString *stringFromDate = [formatter stringFromDate:workout.date];
     cell.workoutHeader.text = stringFromDate;
-    
-//    if (cell == nil) {
-//        cell = [[PreviousWorkoutCell alloc]
-//                initWithStyle:UITableViewCellStyleDefault
-//                reuseIdentifier:CellIdentifier];
-//    }
-//    [cell.workoutButton setTitle: [self.workouts objectAtIndex: [indexPath row]] forState:UIControlStateNormal];
-//    
-    
-    
+
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WorkoutDetailsViewController* detailController = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"WorkoutDetailsViewController"];
+    detailController.selectedWorkout = [self.workouts objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 /*
