@@ -97,7 +97,7 @@
     int secs = (int) (elapsed - mins * 60);
     
     NSString *minuteText;
-    if (mins <= 1) {
+    if (mins == 1) {
         minuteText = [NSString stringWithFormat: @"minute"];
     } else {
         minuteText = [NSString stringWithFormat: @"minutes"];
