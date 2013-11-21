@@ -34,7 +34,11 @@
 	// Do any additional setup after loading the view.
     NSLog(@"workout time: %@", self.workout.totalTime);
     self.totalTime.text = [self stringFromTimeInterval:(self.workout.totalTime)];
+    self.totalTime.accessibilityLabel = [self getSpokenTime:self.workout.totalTime];
     
+    NSString *heartRateText = @"Heart Rate: 120 beats per minute";
+    self.heartRate.text = heartRateText;
+    self.heartRate.accessibilityLabel = heartRateText;
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,5 +79,32 @@
     } else if ([segue.identifier isEqualToString:@"discardSegue"]) {
         [self onDiscard];
     }
+}
+
+// Text for the spoken time Elapsed
+- (NSString *)getSpokenTime:(NSNumber *)interval
+{
+    int timeElapsed = [interval intValue];
+    int mins = (int) (timeElapsed / 60.0);
+    int secs = (int) (timeElapsed - mins * 60);
+    
+    NSString *minuteText;
+    if (mins <= 1) {
+        minuteText = [NSString stringWithFormat: @"minute"];
+    } else {
+        minuteText = [NSString stringWithFormat: @"minutes"];
+    }
+    
+    NSString *secondText;
+    if (secs == 1) {
+        secondText = [NSString stringWithFormat: @"second"];
+    } else {
+        secondText = [NSString stringWithFormat: @"seconds"];
+    }
+    
+    const char *minuteChars = [minuteText UTF8String];
+    const char *secondChars = [secondText UTF8String];
+    
+    return [NSString stringWithFormat: @"Total Time: %u %s and %02u %s", mins, minuteChars, secs, secondChars];
 }
 @end

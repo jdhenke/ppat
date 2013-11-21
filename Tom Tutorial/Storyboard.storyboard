@@ -988,6 +988,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Workout Summary" id="gr9-Pu-0FE"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="heartRate" destination="UtC-iJ-D6k" id="XWp-oV-82e"/>
                         <outlet property="totalTime" destination="yob-ms-djM" id="jgK-SW-rZq"/>
                     </connections>
                 </viewController>

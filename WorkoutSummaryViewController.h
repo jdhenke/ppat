@@ -14,5 +14,6 @@
 @property(nonatomic, retain) Workout *workout;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalTime;
+@property (weak, nonatomic) IBOutlet UILabel *heartRate;
 
 @end

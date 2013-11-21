@@ -52,7 +52,7 @@
     timeIntervalReading = 10;
     
     // Update the heart rate.
-    heartRate.text = @"Heart Rate: 80 beats per minute";
+    heartRate.text = @"Heart Rate: 120 beats per minute";
     heartRate.accessibilityLabel = heartRate.text;
     [self startClock];
     
