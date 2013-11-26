@@ -79,8 +79,15 @@
 
     int mins = (int) (elapsed / 60.0);
     int secs = (int) (elapsed - mins * 60);
+    int hours = (int) mins / 60;
     
-    clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
+    if (hours == 0) {
+        clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%02u", mins, secs];
+    } else {
+        mins %= 60;
+        clock.text = [NSString stringWithFormat: @"Time Elapsed: %u:%u:%02u", hours, mins, secs];
+    }
+
     clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
