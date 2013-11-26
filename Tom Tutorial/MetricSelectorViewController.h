@@ -11,6 +11,7 @@
 @interface MetricSelectorViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
     NSArray *metrics;
 }
+@property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 @property (strong, nonatomic) NSArray *metrics;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MetricSelectorViewController.h"
+#import "WorkoutAveragesTableViewController.h"
 
 @interface MetricSelectorViewController ()
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.metrics = [[NSArray alloc] initWithObjects:
-                          @"Time", @"Heartrate", @"Distance", nil];
+                          @"Time", @"Heartrate", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +56,23 @@ numberOfRowsInComponent:(NSInteger)component
 {
     return [metrics objectAtIndex:row];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Next"])
+    {
+        
+        //        UINavigationController *navigationController = segue.destinationViewController;
+        WorkoutAveragesTableViewController *next = (WorkoutAveragesTableViewController *)segue.destinationViewController;
+        int thing = [_metricPicker selectedRowInComponent:0];
+        next.metric = [metrics objectAtIndex:thing];
+//        int row = [_metricPicker ];
+//        NSString* wasup = [_metricPicker objectAtIndex:row];
+//        next.metric = [_metricPicker ]
+////        next.metric = [_metricPicker s];
+    }
+}
+
 
 
 @end
