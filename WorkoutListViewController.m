@@ -39,9 +39,18 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Workout"
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
+    
+    // filter date
+    if (self.date != NULL) {
+        NSDate *startDate = [self.date dateByAddingTimeInterval:-60*60*24];
+        NSDate *endDate = [startDate dateByAddingTimeInterval:60*60*24];
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"((date >= %@) AND (date < %@)) || (date = nil)",startDate,endDate];
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    // make request
     NSError *error;
     self.workouts = [context executeFetchRequest:fetchRequest error:&error];
-
     
 //    self.workouts = [[NSArray alloc]
 //     initWithObjects:@"Alpha",

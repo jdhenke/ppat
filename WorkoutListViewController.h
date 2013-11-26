@@ -12,5 +12,6 @@
 @interface WorkoutListViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *workouts;
+@property (nonatomic, strong) NSDate *date;
 
 @end

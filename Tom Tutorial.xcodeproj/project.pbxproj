@@ -15,6 +15,7 @@
 		21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C018301894000B0566 /* WorkoutProgressViewController.m */; };
 		21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */; };
 		B20433B71830220800308F13 /* AudioIntervalDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20433B61830220800308F13 /* AudioIntervalDistanceViewController.m */; };
+		B207B35618452ADF00478E1A /* SelectDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B207B35518452ADF00478E1A /* SelectDateViewController.m */; };
 		B21B9FD3182D54B300F8C3EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD2182D54B300F8C3EC /* Foundation.framework */; };
 		B21B9FD5182D54B300F8C3EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */; };
 		B21B9FD7182D54B300F8C3EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B9FD6182D54B300F8C3EC /* UIKit.framework */; };
@@ -65,6 +66,8 @@
 		21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSummaryViewController.m; path = ../WorkoutSummaryViewController.m; sourceTree = "<group>"; };
 		B20433B51830220800308F13 /* AudioIntervalDistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioIntervalDistanceViewController.h; sourceTree = "<group>"; };
 		B20433B61830220800308F13 /* AudioIntervalDistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioIntervalDistanceViewController.m; sourceTree = "<group>"; };
+		B207B35418452ADF00478E1A /* SelectDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDateViewController.h; sourceTree = "<group>"; };
+		B207B35518452ADF00478E1A /* SelectDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDateViewController.m; sourceTree = "<group>"; };
 		B21B9FCF182D54B300F8C3EC /* Tom Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tom Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21B9FD2182D54B300F8C3EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B21B9FD4182D54B300F8C3EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -192,6 +195,8 @@
 				B269DC251832C56B008ED0F3 /* MetricSelectorViewController.m */,
 				B22BF721183D48970008A881 /* PreviousWorkoutCell.h */,
 				B22BF722183D48970008A881 /* PreviousWorkoutCell.m */,
+				B207B35418452ADF00478E1A /* SelectDateViewController.h */,
+				B207B35518452ADF00478E1A /* SelectDateViewController.m */,
 			);
 			path = "Tom Tutorial";
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				B22BF723183D48970008A881 /* PreviousWorkoutCell.m in Sources */,
 				219E812E183DBA100021E82F /* WorkoutDetailsViewController.m in Sources */,
 				21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */,
+				B207B35618452ADF00478E1A /* SelectDateViewController.m in Sources */,
 				B22BF720183D48780008A881 /* WorkoutListViewController.m in Sources */,
 				B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */,
 				B20433B71830220800308F13 /* AudioIntervalDistanceViewController.m in Sources */,

@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="471" y="1839"/>
         </scene>
-        <!--Workout List View Controller - Browse All Workouts-->
+        <!--Workout List View Controller - Browse Workouts-->
         <scene sceneID="fbh-3r-LyY">
             <objects>
                 <tableViewController id="ZSb-kW-Dsd" customClass="WorkoutListViewController" sceneMemberID="viewController">
@@ -206,7 +206,7 @@
                             <outlet property="delegate" destination="ZSb-kW-Dsd" id="gj2-5w-c9n"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Browse All Workouts" id="aIH-WK-U1t"/>
+                    <navigationItem key="navigationItem" title="Browse Workouts" id="aIH-WK-U1t"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-m5-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -564,10 +564,10 @@
             </objects>
             <point key="canvasLocation" x="1761" y="2994"/>
         </scene>
-        <!--View Controller - Browse by Date-->
+        <!--Select Date View Controller - Browse by Date-->
         <scene sceneID="sGx-nU-6dO">
             <objects>
-                <viewController id="WhV-wm-SpJ" sceneMemberID="viewController">
+                <viewController id="WhV-wm-SpJ" customClass="SelectDateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vmx-P0-L8V"/>
                         <viewControllerLayoutGuide type="bottom" id="cjc-hr-tnv"/>
@@ -611,11 +611,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="e1v-X5-NLO"/>
                         <barButtonItem title="Next" id="Vs0-BW-qh4">
                             <connections>
-                                <segue destination="ZSb-kW-Dsd" kind="push" id="RyJ-0T-WNS"/>
+                                <action selector="next:" destination="WhV-wm-SpJ" id="685-p4-RFq"/>
+                                <segue destination="ZSb-kW-Dsd" kind="push" identifier="Next" id="2Zg-ZT-cAy"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Browse by Date" id="Byd-Wk-B51"/>
+                    <connections>
+                        <outlet property="datePicker" destination="ykY-6f-v1s" id="auW-bU-sZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6D-Xo-rFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1040,6 +1044,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <segue reference="Zrx-XT-wOu"/>
         <segue reference="ec0-YR-fAu"/>
         <segue reference="gqS-VQ-nc8"/>
-        <segue reference="RyJ-0T-WNS"/>
+        <segue reference="2Zg-ZT-cAy"/>
     </inferredMetricsTieBreakers>
 </document>
