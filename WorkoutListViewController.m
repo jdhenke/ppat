@@ -103,7 +103,7 @@
     [formatter setDateFormat: @"MM/dd/yy HH:mm"];
 
     NSString *stringFromDate = [formatter stringFromDate:workout.date];
-    cell.workoutHeader.text = stringFromDate;
+cell.workoutHeader.text = stringFromDate;
     
     // VoiceOver reads the date slightly differently from what is displayed on the screen where it will.
     [formatter setDateStyle:NSDateFormatterLongStyle];

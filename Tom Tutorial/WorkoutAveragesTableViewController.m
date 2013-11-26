@@ -7,12 +7,19 @@
 //
 
 #import "WorkoutAveragesTableViewController.h"
+#import "MetricAverageTableCell.h"
+#import "AppDelegate.h"
+#import "Workout.h"
 
 @interface WorkoutAveragesTableViewController ()
 
 @end
 
 @implementation WorkoutAveragesTableViewController
+
+int indexToNumDays[] = {7,30,365};
+NSString* indexToString[] = {@"1 week", @"1 month", @"1 year"};
+NSString* units;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,7 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",self.metric);
+//    NSLog(@"%@",self.metric);
+    if ([self.metric isEqualToString:@"Time"]) {
+        units = @"seconds";
+    } else if ([self.metric isEqualToString:@"Heartrate"]){
+        units = @"bpm";
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,77 +57,79 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    return 3;
+}
+
+- (int) getAverage: (NSIndexPath*) path {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Workout"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    // specify correct workout range
+    NSDate *endDate = [NSDate date];
+    NSDate *startDate = [endDate dateByAddingTimeInterval:-60*60*24*indexToNumDays[path.row]];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"((date >= %@) AND (date < %@)) || (date = nil)",startDate,endDate];
+    [fetchRequest setPredicate:predicate];
+    
+    // make request
+    NSError *error;
+    NSArray *workouts = [context executeFetchRequest:fetchRequest error:&error];
+    
+//    printf("%i\n", [workouts count]);
+
+    if ([_metric isEqualToString:@"Time"]) {
+        int totalTime = 0;
+        int numTimes = 0;
+        for (int i = 0; i < [workouts count]; ++i) {
+            Workout *workout = [workouts objectAtIndex:i];
+            totalTime += [workout.totalTime intValue];
+            numTimes += 1;
+        }
+        if (numTimes > 0) {
+            return totalTime / numTimes;
+        } else {
+            return 0;
+        }
+    } else if ([_metric isEqualToString:@"Heartrate"]) {
+        int totalHeartRate = 0;
+        int numTimes = 0;
+        for (int i = 0; i < [workouts count]; ++i) {
+            Workout *workout = [workouts objectAtIndex:i];
+            totalHeartRate += [workout.avgHeartRate intValue];
+            numTimes += 1;
+        }
+        if (numTimes > 0) {
+            return totalHeartRate / numTimes;
+        } else {
+            return 0;
+        }
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    MetricAverageTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    // create timeframe text
+    NSString* text = indexToString[(int)indexPath.row];
     
+    // create timeframe average
+    int average = [self getAverage:indexPath];
+    
+    // actually assign it to the cell
+    cell.label.text = [NSString stringWithFormat:@"%@ %i %@", text, average, units];
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

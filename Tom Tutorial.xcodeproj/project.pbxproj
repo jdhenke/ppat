@@ -36,6 +36,7 @@
 		B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21BA00F1830125800F8C3EC /* AudioIntervalTimeViewController.m */; };
 		B22BF720183D48780008A881 /* WorkoutListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22BF71F183D48780008A881 /* WorkoutListViewController.m */; };
 		B22BF723183D48970008A881 /* PreviousWorkoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22BF722183D48970008A881 /* PreviousWorkoutCell.m */; };
+		B23D978D1845390F00405A39 /* MetricAverageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B23D978C1845390F00405A39 /* MetricAverageTableCell.m */; };
 		B269DC261832C56B008ED0F3 /* MetricSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B269DC251832C56B008ED0F3 /* MetricSelectorViewController.m */; };
 		B2B56D271831830C00396998 /* ReviewWorkoutsMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B56D261831830C00396998 /* ReviewWorkoutsMainMenuViewController.m */; };
 		B2E7F181183174B40056FEE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E7F180183174B40056FEE5 /* AVFoundation.framework */; };
@@ -96,6 +97,8 @@
 		B22BF71F183D48780008A881 /* WorkoutListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutListViewController.m; path = ../WorkoutListViewController.m; sourceTree = "<group>"; };
 		B22BF721183D48970008A881 /* PreviousWorkoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousWorkoutCell.h; sourceTree = "<group>"; };
 		B22BF722183D48970008A881 /* PreviousWorkoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousWorkoutCell.m; sourceTree = "<group>"; };
+		B23D978B1845390F00405A39 /* MetricAverageTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricAverageTableCell.h; sourceTree = "<group>"; };
+		B23D978C1845390F00405A39 /* MetricAverageTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricAverageTableCell.m; sourceTree = "<group>"; };
 		B269DC241832C56B008ED0F3 /* MetricSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricSelectorViewController.h; sourceTree = "<group>"; };
 		B269DC251832C56B008ED0F3 /* MetricSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricSelectorViewController.m; sourceTree = "<group>"; };
 		B2B56D251831830C00396998 /* ReviewWorkoutsMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewWorkoutsMainMenuViewController.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				B207B35518452ADF00478E1A /* SelectDateViewController.m */,
 				B207B35A184533EB00478E1A /* WorkoutAveragesTableViewController.h */,
 				B207B35B184533EB00478E1A /* WorkoutAveragesTableViewController.m */,
+				B23D978B1845390F00405A39 /* MetricAverageTableCell.h */,
+				B23D978C1845390F00405A39 /* MetricAverageTableCell.m */,
 			);
 			path = "Tom Tutorial";
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
 				B2B56D271831830C00396998 /* ReviewWorkoutsMainMenuViewController.m in Sources */,
 				21B357BE183016E5000B0566 /* Workout.m in Sources */,
+				B23D978D1845390F00405A39 /* MetricAverageTableCell.m in Sources */,
 				B269DC261832C56B008ED0F3 /* MetricSelectorViewController.m in Sources */,
 				B207B35C184533EB00478E1A /* WorkoutAveragesTableViewController.m in Sources */,
 			);
