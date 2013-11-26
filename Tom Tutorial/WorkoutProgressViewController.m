@@ -18,7 +18,7 @@
 
 @implementation WorkoutProgressViewController
 
-@synthesize clock, heartRate, pauseResumeButton;
+@synthesize clock, heartRate, pauseResumeButton, savedSender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -179,10 +179,28 @@
 - (IBAction)endWorkout:(id)sender
 {
     // save workout
+    [self pauseWorkout];
     running = false;
-    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
-    [av speakUtterance:endUtterance];
+    self.savedSender = sender;
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"End Workout Confirmation"
+                                                      message:@"Do you want to end this workout?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Definitely End Workout", nil];
+    [message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        running = false;
+        AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+        AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
+        [av speakUtterance:endUtterance];
+        [self performSegueWithIdentifier:@"EndWorkout" sender:self.savedSender];
+    } else {
+        [self resumeWorkout];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

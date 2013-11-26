@@ -11,7 +11,7 @@
 
 @class WorkoutProgressViewController;
 
-@interface WorkoutProgressViewController : UIViewController
+@interface WorkoutProgressViewController : UIViewController <UIAlertViewDelegate>
 {
     NSTimeInterval startTime;
     NSTimeInterval lastElapsed;
@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *clock;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;
+@property (weak, nonatomic) id savedSender;
 
 - (IBAction)pauseOrResumeWorkout:(id)sender;
 - (IBAction)endWorkout:(id)sender;
