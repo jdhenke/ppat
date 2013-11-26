@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Workout.h"
 
-@interface WorkoutSummaryViewController : UIViewController
+@interface WorkoutSummaryViewController : UIViewController <UIAlertViewDelegate>
 
 @property(nonatomic, retain) Workout *workout;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalTime;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
+@property (weak, nonatomic) id savedSender;
+
+- (IBAction)deleteWorkout:(id)sender;
 
 @end

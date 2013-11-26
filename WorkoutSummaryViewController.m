@@ -17,7 +17,7 @@
 
 @implementation WorkoutSummaryViewController
 
-@synthesize workout;
+@synthesize workout, savedSender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -107,4 +107,31 @@
     
     return [NSString stringWithFormat: @"Total Time: %u %s and %02u %s", mins, minuteChars, secs, secondChars];
 }
+
+- (IBAction)deleteWorkout:(id)sender
+{
+    self.savedSender = sender;
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Delete Workout Confirmation"
+                                                      message:@"Do you want to delete this workout?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Definitely Delete Workout", nil];
+    [message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
+        AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Deleted"];
+        [av speakUtterance:endUtterance];
+        
+        /* TODO: INSERT ACTUAL CORE DATA DELETION HERE */
+        
+        [self performSegueWithIdentifier:@"Home" sender:self.savedSender];
+    } else {
+        // do nothing
+    }
+}
+
 @end
