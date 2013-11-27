@@ -473,9 +473,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/uid/Documents/ppat_teamJonathan/wf_api_3.0/dependencies,
-					/Users/uid/Documents/ppat_teamJonathan/ppat/wf_api_3.0/dependencies,
-					"/Users/jdhenke/src/Tom\\ Tutorial/wf_api_3.0/dependencies",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
@@ -497,9 +495,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/uid/Documents/ppat_teamJonathan/wf_api_3.0/dependencies,
-					/Users/uid/Documents/ppat_teamJonathan/ppat/wf_api_3.0/dependencies,
-					"/Users/jdhenke/src/Tom\\ Tutorial/wf_api_3.0/dependencies",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
