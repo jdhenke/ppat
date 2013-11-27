@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WorkoutProgressViewController.h"
 
 @interface AudioIntervalTimeViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
     NSArray *timeIntervals;
 }
+
 @property (strong, nonatomic) NSArray *timeIntervals;
+@property (strong, nonatomic) IBOutlet UIPickerView *timePicker;
 @end

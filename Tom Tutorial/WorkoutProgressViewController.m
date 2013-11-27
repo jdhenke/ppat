@@ -38,7 +38,7 @@
 //    while ([[AVAudioSession sharedInstance] isOtherAudioPlaying]) {
 //        // do nothing
 //    }
-
+    
     // Announce that the workout has started.
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Started"];
@@ -49,7 +49,6 @@
     lastElapsed = 0;
     clock.text = @"Time Elapsed: 0 seconds";
     clock.accessibilityLabel = clock.text;
-    timeIntervalReading = 10;
     
     // Update the heart rate.
     heartRate.text = @"Heart Rate: 120 beats per minute";
@@ -91,7 +90,7 @@
     clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
-    if (secs%timeIntervalReading ==0 && secs > 5) {
+    if ((int)elapsed%self.timeIntervalReading ==0 && secs > 5) {
         [self readIntervalWithTime:elapsed];
     }
     
