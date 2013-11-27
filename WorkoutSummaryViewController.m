@@ -63,21 +63,11 @@
     [av speakUtterance:utterance];
 }
 
--(void)onDiscard
-{
-    // TODO: discard workout here
-    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Deleted"];
-    [av speakUtterance:utterance];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"saveSegue"])
     {
         [self onSave];
-    } else if ([segue.identifier isEqualToString:@"discardSegue"]) {
-        [self onDiscard];
     }
 }
 
@@ -122,11 +112,13 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext* context = appDelegate.managedObjectContext;
+        [context deleteObject:workout];
+        
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
         AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Deleted"];
         [av speakUtterance:endUtterance];
-        
-        /* TODO: INSERT ACTUAL CORE DATA DELETION HERE */
         
         [self performSegueWithIdentifier:@"Home" sender:self.savedSender];
     } else {

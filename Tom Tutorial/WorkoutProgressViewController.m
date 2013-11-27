@@ -90,7 +90,7 @@
     clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
-    if ((int)elapsed%self.timeIntervalReading ==0 && secs > 5) {
+    if (self.timeIntervalReading > 0 && (int)elapsed%self.timeIntervalReading ==0 && secs > 5) {
         [self readIntervalWithTime:elapsed];
     }
     
