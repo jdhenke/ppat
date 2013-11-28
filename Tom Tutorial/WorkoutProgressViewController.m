@@ -139,18 +139,27 @@
 
 - (NSTimeInterval)getTotalTimeElapsed
 {
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    return lastElapsed + currentTime - startTime;
+    if (running) {
+        NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+        return lastElapsed + currentTime - startTime;
+    } else {
+        return lastElapsed;
+    }
 }
 
 - (void)pauseWorkout
 {
-    running = false;
-    lastElapsed = [self getTotalTimeElapsed];
+    [self pauseClock];
     
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Pausing Workout"];
     [av speakUtterance:utterance];
+}
+
+- (void)pauseClock
+{
+    lastElapsed = [self getTotalTimeElapsed];
+    running = false;
 }
 
 - (void)startClock
@@ -184,9 +193,7 @@
 
 - (IBAction)endWorkout:(id)sender
 {
-    // save workout
-    [self pauseWorkout];
-    running = false;
+    [self pauseClock];
     self.savedSender = sender;
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"End Workout Confirmation"
                                                       message:@"Do you want to end this workout?"
@@ -199,7 +206,6 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        running = false;
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
         AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
         [av speakUtterance:endUtterance];
