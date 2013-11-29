@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WFConnector/WFConnector.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, WFHardwareConnectorDelegate> {
+    WFHardwareConnector* hardwareConnector;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

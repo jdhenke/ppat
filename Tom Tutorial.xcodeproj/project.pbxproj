@@ -10,6 +10,7 @@
 		190E40961848C39A00C95DFF /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAFC18318FBB0083B87B /* WFConnector.framework */; };
 		190E40991848C3AD00C95DFF /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40971848C3AD00C95DFF /* libstdc++.6.0.9.dylib */; };
 		190E409A1848C3AD00C95DFF /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40981848C3AD00C95DFF /* libstdc++.6.dylib */; };
+		190E409C1848C54200C95DFF /* sensor-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 190E409B1848C54200C95DFF /* sensor-data.plist */; };
 		19C6FAF718318EEA0083B87B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */; };
 		19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF818318EF30083B87B /* CoreBluetooth.framework */; };
 		21933F49184668F50081CB35 /* SpeakableTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 21933F48184668F50081CB35 /* SpeakableTime.m */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		190E40971848C3AD00C95DFF /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		190E40981848C3AD00C95DFF /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		190E409B1848C54200C95DFF /* sensor-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sensor-data.plist"; sourceTree = "<group>"; };
 		19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		19C6FAF818318EF30083B87B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		19C6FAFC18318FBB0083B87B /* WFConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WFConnector.framework; path = wf_api_3.0/dependencies/WFConnector.framework; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		B21B9FDB182D54B300F8C3EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				190E409B1848C54200C95DFF /* sensor-data.plist */,
 				B21B9FDC182D54B300F8C3EC /* Tom Tutorial-Info.plist */,
 				B21B9FDD182D54B300F8C3EC /* InfoPlist.strings */,
 				B21B9FE0182D54B300F8C3EC /* main.m */,
@@ -325,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190E409C1848C54200C95DFF /* sensor-data.plist in Resources */,
 				B21B9FDF182D54B300F8C3EC /* InfoPlist.strings in Resources */,
 				B21B9FEA182D54B300F8C3EC /* Images.xcassets in Resources */,
 				B21BA008182D54DB00F8C3EC /* Storyboard.storyboard in Resources */,
