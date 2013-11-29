@@ -12,9 +12,33 @@
 
 @end
 
+NSDictionary *timeIntervalDict;
+
 @implementation AudioIntervalTimeViewController
 
 @synthesize timeIntervals;
+@synthesize timePicker;
+
++ (void) initialize
+{
+    if (!timeIntervalDict)
+    {
+
+        timeIntervalDict = @{
+                             @"No time": @0,
+                             @"30 seconds": @30,
+                             @"1 minute": @60,
+                             @"2 minutes": @120,
+                             @"5 minutes": @300,
+                             @"10 minutes": @600,
+                             @"15 minutes": @900,
+                             @"30 minutes": @1800,
+                             @"1 hour": @3600,
+                             @"2 hours": @7200
+                            };
+
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +55,7 @@
     self.timeIntervals = [[NSArray alloc] initWithObjects:
                          @"No time", @"30 seconds", @"1 minute",@"2 minutes", @"5 minutes",
                          @"10 minutes",@"15 minutes", @"30 minutes",@"1 hour", @"2 hours",nil];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +79,15 @@ numberOfRowsInComponent:(NSInteger)component
             forComponent:(NSInteger)component
 {
     return [timeIntervals objectAtIndex:row];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UINavigationController *navigationController = segue.destinationViewController;
+    WorkoutProgressViewController *workoutProgressViewController = [[navigationController viewControllers] objectAtIndex:0];
+    NSInteger selectedRow = [timePicker selectedRowInComponent:0];
+    NSString *selectedTime = [timeIntervals objectAtIndex:selectedRow];
+    workoutProgressViewController.timeIntervalReading = [[timeIntervalDict valueForKey:selectedTime] integerValue];
 }
 
 @end

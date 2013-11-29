@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Workout.h"
 #import "AppDelegate.h"
+#import "SpeakableTime.h"
 
 @interface WorkoutSummaryViewController ()
 
@@ -33,8 +34,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"workout time: %@", self.workout.totalTime);
-    self.totalTime.text = [self stringFromTimeInterval:(self.workout.totalTime)];
-    self.totalTime.accessibilityLabel = [self getSpokenTime:self.workout.totalTime];
+    self.totalTime.text = [NSString stringWithFormat: @"Total time: %@", [self.workout getDisplayTime]];
+    
+    SpeakableTime *spokenTime = [[SpeakableTime alloc] initWithTime:[self.workout.totalTime doubleValue]];
+    self.totalTime.accessibilityLabel = [NSString stringWithFormat: @"Time: %@", [spokenTime getSpokenTimeString]];
     
     NSString *heartRateText = @"Heart Rate: 120 beats per minute";
     self.heartRate.text = heartRateText;
@@ -47,27 +50,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-// TODO: put this in a helper file?
-- (NSString *)stringFromTimeInterval:(NSNumber *)interval {
-    NSInteger ti = [interval integerValue];
-    NSInteger seconds = ti % 60;
-    NSInteger minutes = (ti / 60) % 60;
-    NSInteger hours = (ti / 3600);
-    return [NSString stringWithFormat:@"Total time: %02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
-}
-
 -(void)onSave
 {
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Saved"];
-    [av speakUtterance:utterance];
-}
-
--(void)onDiscard
-{
-    // TODO: discard workout here
-    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Deleted"];
     [av speakUtterance:utterance];
 }
 
@@ -76,36 +62,7 @@
     if ([segue.identifier isEqualToString:@"saveSegue"])
     {
         [self onSave];
-    } else if ([segue.identifier isEqualToString:@"discardSegue"]) {
-        [self onDiscard];
     }
-}
-
-// Text for the spoken time Elapsed
-- (NSString *)getSpokenTime:(NSNumber *)interval
-{
-    int timeElapsed = [interval intValue];
-    int mins = (int) (timeElapsed / 60.0);
-    int secs = (int) (timeElapsed - mins * 60);
-    
-    NSString *minuteText;
-    if (mins == 1) {
-        minuteText = [NSString stringWithFormat: @"minute"];
-    } else {
-        minuteText = [NSString stringWithFormat: @"minutes"];
-    }
-    
-    NSString *secondText;
-    if (secs == 1) {
-        secondText = [NSString stringWithFormat: @"second"];
-    } else {
-        secondText = [NSString stringWithFormat: @"seconds"];
-    }
-    
-    const char *minuteChars = [minuteText UTF8String];
-    const char *secondChars = [secondText UTF8String];
-    
-    return [NSString stringWithFormat: @"Total Time: %u %s and %02u %s", mins, minuteChars, secs, secondChars];
 }
 
 - (IBAction)deleteWorkout:(id)sender
@@ -122,11 +79,13 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext* context = appDelegate.managedObjectContext;
+        [context deleteObject:workout];
+        
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
         AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Deleted"];
         [av speakUtterance:endUtterance];
-        
-        /* TODO: INSERT ACTUAL CORE DATA DELETION HERE */
         
         [self performSegueWithIdentifier:@"Home" sender:self.savedSender];
     } else {

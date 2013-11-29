@@ -38,7 +38,7 @@
 //    while ([[AVAudioSession sharedInstance] isOtherAudioPlaying]) {
 //        // do nothing
 //    }
-
+    
     // Announce that the workout has started.
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Workout Started"];
@@ -49,7 +49,6 @@
     lastElapsed = 0;
     clock.text = @"Time Elapsed: 0 seconds";
     clock.accessibilityLabel = clock.text;
-    timeIntervalReading = 10;
     
     // Update the heart rate.
     heartRate.text = @"Heart Rate: 120 beats per minute";
@@ -91,7 +90,7 @@
     clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
-    if (secs%timeIntervalReading ==0 && secs > 5) {
+    if (self.timeIntervalReading > 0 && (int)elapsed%self.timeIntervalReading ==0 && secs > 5) {
         [self readIntervalWithTime:elapsed];
     }
     
@@ -140,18 +139,27 @@
 
 - (NSTimeInterval)getTotalTimeElapsed
 {
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    return lastElapsed + currentTime - startTime;
+    if (running) {
+        NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+        return lastElapsed + currentTime - startTime;
+    } else {
+        return lastElapsed;
+    }
 }
 
 - (void)pauseWorkout
 {
-    running = false;
-    lastElapsed = [self getTotalTimeElapsed];
+    [self pauseClock];
     
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Pausing Workout"];
     [av speakUtterance:utterance];
+}
+
+- (void)pauseClock
+{
+    lastElapsed = [self getTotalTimeElapsed];
+    running = false;
 }
 
 - (void)startClock
@@ -185,9 +193,7 @@
 
 - (IBAction)endWorkout:(id)sender
 {
-    // save workout
-    [self pauseWorkout];
-    running = false;
+    [self pauseClock];
     self.savedSender = sender;
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"End Workout Confirmation"
                                                       message:@"Do you want to end this workout?"
@@ -200,7 +206,6 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        running = false;
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
         AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
         [av speakUtterance:endUtterance];

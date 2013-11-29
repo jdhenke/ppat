@@ -16,9 +16,9 @@
     NSTimeInterval startTime;
     NSTimeInterval lastElapsed;
     bool running;
-    int timeIntervalReading;
 }
 
+@property (nonatomic) NSInteger timeIntervalReading;
 @property (weak, nonatomic) IBOutlet UILabel *clock;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;

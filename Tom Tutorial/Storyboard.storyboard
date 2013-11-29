@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--View Controller - Jonathan's Fitness App-->
@@ -684,55 +684,20 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="nrB-Ww-eep"/>
-                        <barButtonItem title="Next" id="1G6-Dz-fKg">
-                            <connections>
-                                <segue destination="yOZ-52-mYO" kind="push" id="txb-BZ-Bxf"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Select Time Intervals for Audio Feedback" id="sw0-uo-gsO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5h2-aN-AC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1918" y="-884"/>
-        </scene>
-        <!--Audio Interval Distance View Controller - Select Distance Interval for Audio Feedback-->
-        <scene sceneID="XRN-Sx-2lL">
-            <objects>
-                <viewController id="yOZ-52-mYO" customClass="AudioIntervalDistanceViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XxD-Ni-RZm"/>
-                        <viewControllerLayoutGuide type="bottom" id="iLl-HS-Y3x"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rf4-LR-mPv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-72-hfx">
-                                <rect key="frame" x="0.0" y="171" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="yOZ-52-mYO" id="PQp-Ou-M9y"/>
-                                    <outlet property="delegate" destination="yOZ-52-mYO" id="2oc-60-1HK"/>
-                                </connections>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mb4-Ks-7um"/>
                         <barButtonItem title="Start Workout" id="BM9-Q0-rmp">
                             <connections>
-                                <action selector="read:" destination="yOZ-52-mYO" id="NxP-rb-4k9"/>
                                 <segue destination="HhY-kA-dKu" kind="modal" id="Zrx-XT-wOu"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Select Distance Interval for Audio Feedback" id="Q5u-uw-6Sz"/>
+                    <navigationItem key="navigationItem" title="Select Time Intervals for Audio Feedback" id="sw0-uo-gsO"/>
+                    <connections>
+                        <outlet property="timePicker" destination="1pA-15-R3C" id="het-lo-3cC"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="baN-dP-RVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5h2-aN-AC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2504" y="-884"/>
+            <point key="canvasLocation" x="1918" y="-884"/>
         </scene>
         <!--View Controller - Last Workout Configuration-->
         <scene sceneID="6c2-c1-aat">
@@ -780,9 +745,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <state key="normal" title="Distance Time Interval: 0.5 miles">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="yOZ-52-mYO" kind="push" id="ec0-YR-fAu"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -995,7 +957,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <inferredMetricsTieBreakers>
         <segue reference="nof-hO-iGV"/>
         <segue reference="Zrx-XT-wOu"/>
-        <segue reference="ec0-YR-fAu"/>
         <segue reference="gqS-VQ-nc8"/>
         <segue reference="2Zg-ZT-cAy"/>
     </inferredMetricsTieBreakers>
