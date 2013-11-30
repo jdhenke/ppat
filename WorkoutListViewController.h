@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) NSArray *workouts;
 @property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) NSString *metric;
 
 @end

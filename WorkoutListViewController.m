@@ -111,6 +111,19 @@ cell.workoutHeader.text = stringFromDate;
     NSString *dateLabel =[formatter stringFromDate:workout.date];
     NSLog(@"%@", dateLabel);
     cell.workoutHeader.accessibilityLabel = dateLabel;
+    
+
+//  //cell.metricValue.text = [NSString stringWithFormat:@"%@", [workout valueForKey:self.metric]];
+    
+    if ([self.metric isEqualToString:@"totalTime"]) {
+        cell.metricValue.text = [NSString stringWithFormat:@"%@",[workout getDisplayTime]];
+        cell.metricValue.accessibilityLabel = [workout getSpokenTime];
+    } else if ([self.metric isEqualToString:@"avgHeartRate"]) {
+        cell.metricValue.text = [NSString stringWithFormat:@"%@",[workout getDisplayHR]];
+        cell.metricValue.accessibilityLabel = [workout getSpokenHR];
+    } else {
+        cell.metricValue.text = @"";
+    }
 
     return cell;
 }

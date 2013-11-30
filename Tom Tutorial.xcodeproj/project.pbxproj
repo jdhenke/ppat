@@ -525,6 +525,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)",
 					"$(SRCROOT)/wf_api_3.0/dependencies",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -547,6 +548,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)",
 					"$(SRCROOT)/wf_api_3.0/dependencies",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
