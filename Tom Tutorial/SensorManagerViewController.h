@@ -54,8 +54,8 @@
 @property (nonatomic, retain) IBOutlet UITableView* pairedTable;
 
 
-
 - (IBAction)searchClicked:(id)sender;
+
 
 - (void)configForSensorType:(WFSensorType_t)eSensorType onNetworks:(USHORT)usNetworks;
 

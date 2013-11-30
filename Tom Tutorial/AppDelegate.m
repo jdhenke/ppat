@@ -70,6 +70,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    NSLog(@"applicationDidBecomeActive");
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
@@ -176,6 +177,87 @@
 }
 
 ////// SETUP FOR WAHOO
+#pragma mark -
+#pragma mark HardwareConnectorDelegate Implementation
 
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector connectedSensor:(WFSensorConnection*)connectionInfo
+{
+    NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                              connectionInfo, @"connectionInfo",
+                              nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_SENSOR_CONNECTED object:nil userInfo:userInfo];
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector didDiscoverDevices:(NSSet*)connectionParams searchCompleted:(BOOL)bCompleted
+{
+    // post the sensor type and device params to the notification.
+    NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                              connectionParams, @"connectionParams",
+                              [NSNumber numberWithBool:bCompleted], @"searchCompleted",
+                              nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_DISCOVERED_SENSOR object:nil userInfo:userInfo];
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector disconnectedSensor:(WFSensorConnection*)connectionInfo
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_SENSOR_DISCONNECTED object:nil];
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector stateChanged:(WFHardwareConnectorState_t)currentState
+{
+	BOOL connected = ((currentState & WF_HWCONN_STATE_ACTIVE) || (currentState & WF_HWCONN_STATE_BT40_ENABLED)) ? TRUE : FALSE;
+	if (connected)
+	{
+        [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_HW_CONNECTED object:nil];
+	}
+	else
+	{
+        [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_HW_DISCONNECTED object:nil];
+	}
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnectorHasData
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_SENSOR_HAS_DATA object:nil];
+}
+
+
+#pragma mark -
+#pragma mark WahooDemoAppDelegate Implementation
+
+#pragma mark Private Methods
+
+//--------------------------------------------------------------------------------
+- (void)copyPlistToDocs
+{
+	// First, test for existence - we don’t want to wipe out a user’s DB
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject];
+	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:WF_SENSOR_DATA_FILE];
+	
+	// for debugging, uncomment this line to overwrite existing copy.
+	// DEBUG:  overwrite existing settings file.
+	//[[NSFileManager defaultManager] removeItemAtPath:filePath error:NULL];
+	
+	if ( ![fileManager fileExistsAtPath:filePath] )
+	{
+		// The writable database does not exist, so copy the default to the appropriate location.
+		NSString *templatePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:WF_SENSOR_DATA_FILE];
+		
+		NSError* error;
+		
+		BOOL success = [fileManager copyItemAtPath:templatePath toPath:filePath error:&error];
+		
+		if (!success)
+        {
+			NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+		}
+	}
+}
 
 @end

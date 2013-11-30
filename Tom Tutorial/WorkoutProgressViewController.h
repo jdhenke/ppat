@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "WorkoutSummaryViewController.h"
 #import "WFSensorCommonViewController.h"
+#import "SensorManagerViewController.h"
 
 @class WorkoutProgressViewController;
 
-@interface WorkoutProgressViewController : WFSensorCommonViewController <UIAlertViewDelegate>
+@interface WorkoutProgressViewController : WFSensorCommonViewController <WFSensorConnectionDelegate, UIAlertViewDelegate>
 {
     NSTimeInterval startTime;
     NSTimeInterval lastElapsed;

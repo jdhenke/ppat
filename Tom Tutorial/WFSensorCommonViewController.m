@@ -83,10 +83,10 @@
     {
         hardwareConnector = [WFHardwareConnector sharedConnector];
         sensorType = WF_SENSORTYPE_NONE;
-        sensorConnection = nil;
+        //sensorConnection = nil;
         
-        // default applicable networks to ANT+.
-        applicableNetworks = WF_NETWORKTYPE_ANTPLUS;
+        //// default applicable networks to ANT+.
+        applicableNetworks = WF_NETWORKTYPE_BTLE;
     }
     
     return self;
@@ -101,6 +101,7 @@
 //--------------------------------------------------------------------------------
 - (void)viewDidLoad
 {
+    hardwareConnector = [WFHardwareConnector sharedConnector];
     // initialize the display based on HW connector and sensor state.
     if ( hardwareConnector.isCommunicationHWReady )
     {
@@ -440,14 +441,15 @@
 			// otherwise, get the params from the stored settings.
 			else
 			{
+            
 				params = [hardwareConnector.settings connectionParamsForSensorType:sensorType];
 			}
 			
 			if ( params != nil)
 			{
                 // set the search timeout.
-                params.searchTimeout = hardwareConnector.settings.searchTimeout;
-                
+                //params.searchTimeout = hardwareConnector.settings.searchTimeout;
+                params.searchTimeout = 10;
                 // if the connection request is a wildcard, use proximity search.
                 if ( params.isWildcard )
                 {
@@ -514,13 +516,7 @@
             btDeviceInfo.sensorConnection = sensorConnection;
             [self.navigationController pushViewController:btDeviceInfo animated:TRUE];
         }
-        
-        else if ( sensorConnection.isANTConnection )
-        {
-            // update device info and display VC.
-            [self updateDeviceInfo];
-            [self.navigationController pushViewController:antDeviceInfo animated:TRUE];
-        }
+
     }
 }
 
