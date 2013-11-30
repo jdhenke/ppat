@@ -25,6 +25,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        applicableNetworks = WF_NETWORKTYPE_BTLE | WF_NETWORKTYPE_ANTPLUS;
+        sensorType = WF_SENSORTYPE_HEARTRATE;
     }
     return self;
 }
@@ -56,7 +58,7 @@
     [self startClock];
     
     self.pauseResumeButton.accessibilityLabel = @"Pause";
-    
+
 
 }
 
@@ -66,9 +68,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateHeartRate {
-    //TODO(mwchen): Update this when the heart rate monitor is connected.
-}
+
 
 - (void)updateTime
 {
@@ -95,6 +95,9 @@
     }
     
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
+    
+    // Everytime you update time, try updating the HR monitor
+    [self updateHeartRate];
 }
 
 - (NSString *)getSpokenTime:(NSTimeInterval)elapsed
@@ -168,6 +171,7 @@
     startTime = [NSDate timeIntervalSinceReferenceDate];
 
     [self updateTime];
+
 }
 
 - (void)resumeWorkout
@@ -251,6 +255,83 @@
 		abort();
 	}
     return (Workout *)workout;
+}
+
+// Wahoo HR monitor
+- (void)updateHeartRate {
+    [self updateData];
+    
+    //TODO(mwchen): Update this when the heart rate monitor is connected.
+    WFHeartrateData* hrData = [self.heartrateConnection getHeartrateData];
+    NSLog(@"%d", [self.heartrateConnection hasData]);
+	//WFHeartrateRawData* hrRawData = [self.heartrateConnection getHeartrateRawData];
+	if ( hrData != nil )
+	{
+        
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:hrData.computedHeartrate];
+        
+        // unformatted value.
+		// computedHeartrateLabel.text = [NSString stringWithFormat:@"%d", hrData.computedHeartrate];
+        
+        // update basic data.
+        heartRate.text = [hrData formattedHeartrate:TRUE];
+		//beatTimeLabel.text = [NSString stringWithFormat:@"%d", hrData.beatTime];
+		
+        // update raw data.
+		//beatCountLabel.text = [NSString stringWithFormat:@"%d", hrRawData.beatCount];
+		//previousBeatLabel.text = [NSString stringWithFormat:@"%d", hrRawData.previousBeatTime];
+        
+        // BTLE HR monitors optionally transmit R-R intervals.  this demo does not
+        // display R-R values.  however, the following code is included to demonstrate
+        // how to read and parse R-R intervals.
+        if ( [hrData isKindOfClass:[WFBTLEHeartrateData class]] )
+        {
+            NSArray* rrIntervals = [(WFBTLEHeartrateData*)hrData rrIntervals];
+            for ( NSNumber* rr in rrIntervals )
+            {
+                NSLog(@"R-R Interval: %1.3f s.", [rr doubleValue]);
+            }
+        }
+        
+        // the common data for BTLE sensors is still in beta state.  this data
+        // will eventually be merged with the existing common data.  for current demo
+        // purposes, the battery level is updated directly from this HR view controller.
+       // if ( hrRawData.btleCommonData )
+       // {
+       //     battLevelLabel.text = [NSString stringWithFormat:@"%u %%", hrRawData.btleCommonData.batteryLevel];
+       // }
+	}
+	else
+	{
+		//[self resetDisplay];
+        heartRate.text = @"Heart rate: n/a";
+	}
+    
+}
+
+//--------------------------------------------------------------------------------
+- (void)onSensorConnected:(WFSensorConnection*)connectionInfo
+{
+    WFHeartrateConnection* hrc = self.heartrateConnection;
+    if ( hrc )
+    {
+        hrc.delegate = self;
+        //hrc.btDelegate = self;
+    }
+}
+
+
+//--------------------------------------------------------------------------------
+- (WFHeartrateConnection*)heartrateConnection
+{
+	WFHeartrateConnection* retVal = nil;
+    NSLog(@"Sensor connection: %@", self.sensorConnection);
+	if ( [self.sensorConnection isKindOfClass:[WFHeartrateConnection class]] )
+	{
+		retVal = (WFHeartrateConnection*)self.sensorConnection;
+	}
+	
+	return retVal;
 }
 
 

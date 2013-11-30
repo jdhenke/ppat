@@ -11,6 +11,11 @@
 		190E40991848C3AD00C95DFF /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40971848C3AD00C95DFF /* libstdc++.6.0.9.dylib */; };
 		190E409A1848C3AD00C95DFF /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40981848C3AD00C95DFF /* libstdc++.6.dylib */; };
 		190E409C1848C54200C95DFF /* sensor-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 190E409B1848C54200C95DFF /* sensor-data.plist */; };
+		190E40A2184931F300C95DFF /* SensorManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190E409F184931F300C95DFF /* SensorManagerViewController.m */; };
+		190E40A3184931F300C95DFF /* WFSensorCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190E40A1184931F300C95DFF /* WFSensorCommonViewController.m */; };
+		190E40A61849330200C95DFF /* HeartrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190E40A51849330200C95DFF /* HeartrateViewController.m */; };
+		190E40A91849339200C95DFF /* BTDeviceInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 190E40A81849339200C95DFF /* BTDeviceInfoVC.m */; };
+		190E40AC184933AE00C95DFF /* DeviceDiscoveryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 190E40AB184933AE00C95DFF /* DeviceDiscoveryVC.m */; };
 		19C6FAF718318EEA0083B87B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */; };
 		19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF818318EF30083B87B /* CoreBluetooth.framework */; };
 		21933F49184668F50081CB35 /* SpeakableTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 21933F48184668F50081CB35 /* SpeakableTime.m */; };
@@ -60,6 +65,16 @@
 		190E40971848C3AD00C95DFF /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		190E40981848C3AD00C95DFF /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		190E409B1848C54200C95DFF /* sensor-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sensor-data.plist"; sourceTree = "<group>"; };
+		190E409E184931F300C95DFF /* SensorManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorManagerViewController.h; sourceTree = "<group>"; };
+		190E409F184931F300C95DFF /* SensorManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorManagerViewController.m; sourceTree = "<group>"; };
+		190E40A0184931F300C95DFF /* WFSensorCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSensorCommonViewController.h; sourceTree = "<group>"; };
+		190E40A1184931F300C95DFF /* WFSensorCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSensorCommonViewController.m; sourceTree = "<group>"; };
+		190E40A41849330200C95DFF /* HeartrateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartrateViewController.h; sourceTree = "<group>"; };
+		190E40A51849330200C95DFF /* HeartrateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartrateViewController.m; sourceTree = "<group>"; };
+		190E40A71849339200C95DFF /* BTDeviceInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceInfoVC.h; sourceTree = "<group>"; };
+		190E40A81849339200C95DFF /* BTDeviceInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceInfoVC.m; sourceTree = "<group>"; };
+		190E40AA184933AE00C95DFF /* DeviceDiscoveryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDiscoveryVC.h; sourceTree = "<group>"; };
+		190E40AB184933AE00C95DFF /* DeviceDiscoveryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDiscoveryVC.m; sourceTree = "<group>"; };
 		19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		19C6FAF818318EF30083B87B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		19C6FAFC18318FBB0083B87B /* WFConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WFConnector.framework; path = wf_api_3.0/dependencies/WFConnector.framework; sourceTree = "<group>"; };
@@ -145,6 +160,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190E409D184931AF00C95DFF /* WahooSupport */ = {
+			isa = PBXGroup;
+			children = (
+				190E40AA184933AE00C95DFF /* DeviceDiscoveryVC.h */,
+				190E40AB184933AE00C95DFF /* DeviceDiscoveryVC.m */,
+				190E40A71849339200C95DFF /* BTDeviceInfoVC.h */,
+				190E40A81849339200C95DFF /* BTDeviceInfoVC.m */,
+				190E40A41849330200C95DFF /* HeartrateViewController.h */,
+				190E40A51849330200C95DFF /* HeartrateViewController.m */,
+				190E409E184931F300C95DFF /* SensorManagerViewController.h */,
+				190E409F184931F300C95DFF /* SensorManagerViewController.m */,
+				190E40A0184931F300C95DFF /* WFSensorCommonViewController.h */,
+				190E40A1184931F300C95DFF /* WFSensorCommonViewController.m */,
+			);
+			name = WahooSupport;
+			sourceTree = "<group>";
+		};
 		B21B9FC6182D54B300F8C3EC = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +217,7 @@
 		B21B9FDA182D54B300F8C3EC /* Tom Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				190E409D184931AF00C95DFF /* WahooSupport */,
 				219E812C183DBA100021E82F /* WorkoutDetailsViewController.h */,
 				219E812D183DBA100021E82F /* WorkoutDetailsViewController.m */,
 				21933F47184668F50081CB35 /* SpeakableTime.h */,
@@ -357,15 +390,20 @@
 				B22BF720183D48780008A881 /* WorkoutListViewController.m in Sources */,
 				B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */,
 				B20433B71830220800308F13 /* AudioIntervalDistanceViewController.m in Sources */,
+				190E40A61849330200C95DFF /* HeartrateViewController.m in Sources */,
 				B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
 				21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */,
 				21933F49184668F50081CB35 /* SpeakableTime.m in Sources */,
 				B21BA00B182D5C3800F8C3EC /* Model.xcdatamodeld in Sources */,
+				190E40A91849339200C95DFF /* BTDeviceInfoVC.m in Sources */,
 				B2B56D271831830C00396998 /* ReviewWorkoutsMainMenuViewController.m in Sources */,
+				190E40AC184933AE00C95DFF /* DeviceDiscoveryVC.m in Sources */,
 				21B357BE183016E5000B0566 /* Workout.m in Sources */,
+				190E40A3184931F300C95DFF /* WFSensorCommonViewController.m in Sources */,
 				B23D978D1845390F00405A39 /* MetricAverageTableCell.m in Sources */,
 				B269DC261832C56B008ED0F3 /* MetricSelectorViewController.m in Sources */,
+				190E40A2184931F300C95DFF /* SensorManagerViewController.m in Sources */,
 				B207B35C184533EB00478E1A /* WorkoutAveragesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
