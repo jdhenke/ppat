@@ -19,5 +19,7 @@
 @property (nonatomic, retain) NSDecimalNumber * distance;
 
 - (NSString *) getDisplayTime;
-
+- (NSString *) getSpokenTime;
+- (NSString *) getDisplayHR;
+- (NSString *) getSpokenHR;
 @end

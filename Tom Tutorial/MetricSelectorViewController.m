@@ -8,14 +8,29 @@
 
 #import "MetricSelectorViewController.h"
 #import "WorkoutAveragesTableViewController.h"
+#import "WorkoutListViewController.h"
 
 @interface MetricSelectorViewController ()
 
 @end
 
+NSDictionary *metricNames;
+
 @implementation MetricSelectorViewController
 
 @synthesize metrics;
+@synthesize metricPicker;
+
++ (void) initialize
+{
+    if (!metricNames)
+    {
+        metricNames = @{
+                        @"Time": @"totalTime",
+                        @"Heartrate": @"avgHeartRate"
+                        };
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,17 +74,25 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Next"])
+    if ([segue.identifier isEqualToString:@"toMetricAverages"])
     {
         
         //        UINavigationController *navigationController = segue.destinationViewController;
         WorkoutAveragesTableViewController *next = (WorkoutAveragesTableViewController *)segue.destinationViewController;
-        int thing = [_metricPicker selectedRowInComponent:0];
+        int thing = [metricPicker selectedRowInComponent:0];
         next.metric = [metrics objectAtIndex:thing];
 //        int row = [_metricPicker ];
 //        NSString* wasup = [_metricPicker objectAtIndex:row];
 //        next.metric = [_metricPicker ]
 ////        next.metric = [_metricPicker s];
+    } else if ([segue.identifier isEqualToString:@"toMetricBrowse"])
+    {
+        WorkoutListViewController *next = (WorkoutListViewController *)segue.destinationViewController;
+        int thing = [metricPicker selectedRowInComponent:0];
+        NSLog(@"picker item selected: %d", thing);
+        NSString *metricName = [metrics objectAtIndex:thing];
+        NSLog(@"sending metric...%@", [metricNames valueForKey:metricName]);
+        next.metric = [metricNames valueForKey:metricName];
     }
 }
 

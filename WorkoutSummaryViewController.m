@@ -35,9 +35,7 @@
 	// Do any additional setup after loading the view.
     NSLog(@"workout time: %@", self.workout.totalTime);
     self.totalTime.text = [NSString stringWithFormat: @"Total time: %@", [self.workout getDisplayTime]];
-    
-    SpeakableTime *spokenTime = [[SpeakableTime alloc] initWithTime:[self.workout.totalTime doubleValue]];
-    self.totalTime.accessibilityLabel = [NSString stringWithFormat: @"Time: %@", [spokenTime getSpokenTimeString]];
+    self.totalTime.accessibilityLabel = [self.workout getSpokenTime];
     
     NSString *heartRateText = @"Heart Rate: 120 beats per minute";
     self.heartRate.text = heartRateText;

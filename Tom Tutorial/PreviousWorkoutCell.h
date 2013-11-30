@@ -10,4 +10,5 @@
 
 @interface PreviousWorkoutCell : UITableViewCell
 @property (nonatomic, strong) IBOutlet UILabel *workoutHeader;
+@property (nonatomic, strong) IBOutlet UILabel *metricValue;
 @end

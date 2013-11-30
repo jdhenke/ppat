@@ -484,7 +484,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					/Users/uid/Documents/ppat_copy/ppat/wf_api_3.0/dependencies,
+					"$(SRCROOT)/wf_api_3.0/dependencies",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";
@@ -507,7 +507,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					/Users/uid/Documents/ppat_copy/ppat/wf_api_3.0/dependencies,
+					"$(SRCROOT)/wf_api_3.0/dependencies",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tom Tutorial/Tom Tutorial-Prefix.pch";

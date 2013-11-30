@@ -7,6 +7,7 @@
 //
 
 #import "Workout.h"
+#import "SpeakableTime.h"
 
 //@interface Workout (PrimitiveAccessors)
 //@property (nonatomic) NSNumber *primitiveTime;
@@ -41,6 +42,8 @@
 //    [self didChangeValueForKey:@"totalTime"];
 //}
 
+//TODO: Does Apple have soem built-in way to differentiate text/accessibility label for each attribute?
+
 - (NSString *)getDisplayTime
 {
     NSInteger ti = [self.totalTime integerValue];
@@ -48,6 +51,22 @@
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600);
     return [NSString stringWithFormat:@"%02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
+}
+
+- (NSString *)getSpokenTime
+{
+    SpeakableTime *spokenTime = [[SpeakableTime alloc] initWithTime:[self.totalTime doubleValue]];
+    return [spokenTime getSpokenTimeString];
+}
+
+- (NSString *)getDisplayHR
+{
+    return [NSString stringWithFormat:@"%@ bpm", self.avgHeartRate];
+}
+
+- (NSString *)getSpokenHR
+{
+    return [NSString stringWithFormat:@"%@ beats per minute", self.avgHeartRate];
 }
 
 @end

@@ -181,7 +181,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuesday, November 19th, 5:43 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXy-yb-qhE">
-                                            <rect key="frame" x="20" y="11" width="263" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="182" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -193,9 +193,17 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Metric" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hE-eL-iQv">
+                                            <rect key="frame" x="218" y="13" width="92" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="metricValue" destination="0hE-eL-iQv" id="oYE-K8-MHm"/>
                                     <outlet property="workoutHeader" destination="CXy-yb-qhE" id="EV3-ZQ-278"/>
                                 </connections>
                             </tableViewCell>
@@ -210,7 +218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-m5-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="1110"/>
+            <point key="canvasLocation" x="1811" y="1250"/>
         </scene>
         <!--Workout Details View Controller - Workout Summary-->
         <scene sceneID="Hvp-iC-Uzz">
@@ -364,74 +372,18 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="zg3-6h-SHr"/>
                         <barButtonItem title="Next" id="XEa-u9-wiB">
                             <connections>
-                                <segue destination="CaC-Lv-58b" kind="push" id="zp8-PZ-lsw"/>
+                                <segue destination="ZSb-kW-Dsd" kind="push" identifier="toMetricBrowse" id="3A1-dK-45q"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Browse by Metric" id="cvc-L2-L4R"/>
+                    <connections>
+                        <outlet property="metricPicker" destination="yNb-Hh-RGd" id="7Mq-Wu-rk6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gas-0I-cnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1269" y="2309"/>
-        </scene>
-        <!--Table View Controller - Your Metric for Recent Workouts-->
-        <scene sceneID="CUs-PP-U9t">
-            <objects>
-                <tableViewController id="CaC-Lv-58b" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jgt-JB-cvb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="gRp-pS-3SZ">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yDB-za-ETA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDB-za-ETA" id="IKP-6U-Ap9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yesterday: 150 bpm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ae-d0-BgA">
-                                                    <rect key="frame" x="88" y="11" width="153" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="f7W-SL-hLN">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f7W-SL-hLN" id="Nhu-Gc-f5x">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nov 12: 140 bpm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRZ-GA-Ace">
-                                                    <rect key="frame" x="88" y="11" width="133" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="CaC-Lv-58b" id="UJ2-hu-OUK"/>
-                            <outlet property="delegate" destination="CaC-Lv-58b" id="U2n-uB-Zgy"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Your Metric for Recent Workouts" id="gcJ-oo-HnX"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IhH-Mn-Ef8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1789" y="2309"/>
         </scene>
         <!--Metric Selector View Controller - Select Metric to Average-->
         <scene sceneID="wSY-go-hWA">
@@ -460,7 +412,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="oGK-tK-Gwy"/>
                         <barButtonItem title="Next" id="qF6-Jf-17L">
                             <connections>
-                                <segue destination="PTg-kk-L5X" kind="push" identifier="Next" id="wfe-Na-LuT"/>
+                                <segue destination="PTg-kk-L5X" kind="push" identifier="toMetricAverages" id="wfe-Na-LuT"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -955,9 +907,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="gqS-VQ-nc8"/>
         <segue reference="nof-hO-iGV"/>
         <segue reference="Zrx-XT-wOu"/>
-        <segue reference="gqS-VQ-nc8"/>
-        <segue reference="2Zg-ZT-cAy"/>
+        <segue reference="3A1-dK-45q"/>
     </inferredMetricsTieBreakers>
 </document>
