@@ -218,7 +218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-m5-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1811" y="1250"/>
+            <point key="canvasLocation" x="1811" y="1650"/>
         </scene>
         <!--Workout Details View Controller - Workout Summary-->
         <scene sceneID="Hvp-iC-Uzz">
@@ -610,7 +610,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBf-1N-0cM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="-884"/>
+            <point key="canvasLocation" x="1344" y="-872"/>
         </scene>
         <!--Audio Interval Time View Controller - Select Time Intervals for Audio Feedback-->
         <scene sceneID="uYd-zt-ZRN">
@@ -655,15 +655,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1918" y="-884"/>
         </scene>
-        <!--View Controller - Last Workout Configuration-->
+        <!--Last Workout Config View Controller - Last Workout Configuration-->
         <scene sceneID="6c2-c1-aat">
             <objects>
-                <viewController title="Last Workout Configuration" id="cn8-yr-X1P" sceneMemberID="viewController">
+                <viewController title="Last Workout Configuration" id="cn8-yr-X1P" customClass="LastWorkoutConfigViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FAW-jq-Zwr"/>
                         <viewControllerLayoutGuide type="bottom" id="hPk-3I-l6d"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="d0R-Gb-DYL">
+                    <view key="view" contentMode="scaleToFill" id="d0R-Gb-DYL" customClass="LastWorkout">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -679,26 +679,31 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XL4-Ma-m2F">
-                                <rect key="frame" x="46" y="116" width="229" height="45"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-CC-dSQ">
+                                <rect key="frame" x="133" y="245" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" hint="Double tap to change">
-                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
-                                </accessibility>
-                                <state key="normal" title="Audio Time Interval: 1 minute">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="v6N-TT-cq1" kind="push" id="gqS-VQ-nc8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owf-97-bir">
-                                <rect key="frame" x="46" y="52" width="258" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKP-GN-e7Z">
+                                <rect key="frame" x="141" y="19" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Audio metrics on: time, heart rate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Audio metrics on: none" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-Jw-IjP">
+                                <rect key="frame" x="40" y="71" width="238" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Audio time interval: none" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXl-sB-K4w">
+                                <rect key="frame" x="40" y="167" width="191" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -706,11 +711,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="fy6-Ql-Dbz"/>
                         <barButtonItem title="Start Workout" id="V0a-zv-4bz">
                             <connections>
-                                <segue destination="HhY-kA-dKu" kind="modal" id="3qn-qC-uEu"/>
+                                <segue destination="HhY-kA-dKu" kind="modal" identifier="StartWorkoutSegue" id="3qn-qC-uEu"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Use Last Workout Configuration" id="eA6-7X-H7e"/>
+                    <connections>
+                        <outlet property="audioMetrics" destination="2hD-Jw-IjP" id="b9w-cl-lZu"/>
+                        <outlet property="audioTimeInterval" destination="DXl-sB-K4w" id="4oN-Xf-Ovf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkw-yD-SS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -854,7 +863,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3598" y="377"/>
+            <point key="canvasLocation" x="3590" y="289"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kli-b2-4GA">
@@ -899,7 +908,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UM8-tK-TdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3010" y="281"/>
+            <point key="canvasLocation" x="2978" y="245"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -908,9 +917,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3A1-dK-45q"/>
         <segue reference="nof-hO-iGV"/>
         <segue reference="3qn-qC-uEu"/>
-        <segue reference="eEm-3M-ZjA"/>
+        <segue reference="3A1-dK-45q"/>
     </inferredMetricsTieBreakers>
 </document>

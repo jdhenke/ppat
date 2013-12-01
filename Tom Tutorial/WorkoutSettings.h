@@ -16,4 +16,6 @@
 @property (nonatomic) NSInteger timeAudioInterval;
 @property (nonatomic) BOOL timeAudioOn;
 
+- (NSString *)getAudioMetrics;
+- (NSString *)getTimeIntervalText;
 @end

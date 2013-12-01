@@ -16,6 +16,7 @@
 		2142AE141849CB050024622A /* WorkoutSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2142AE131849CB050024622A /* WorkoutSettings.m */; };
 		21933F49184668F50081CB35 /* SpeakableTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 21933F48184668F50081CB35 /* SpeakableTime.m */; };
 		219E812E183DBA100021E82F /* WorkoutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219E812D183DBA100021E82F /* WorkoutDetailsViewController.m */; };
+		21AFD9DC184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AFD9DB184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m */; };
 		21B357BE183016E5000B0566 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357BD183016E5000B0566 /* Workout.m */; };
 		21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C018301894000B0566 /* WorkoutProgressViewController.m */; };
 		21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */; };
@@ -71,6 +72,8 @@
 		21933F48184668F50081CB35 /* SpeakableTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakableTime.m; sourceTree = "<group>"; };
 		219E812C183DBA100021E82F /* WorkoutDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutDetailsViewController.h; sourceTree = "<group>"; };
 		219E812D183DBA100021E82F /* WorkoutDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutDetailsViewController.m; sourceTree = "<group>"; };
+		21AFD9DA184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastWorkoutConfigViewController.h; sourceTree = "<group>"; };
+		21AFD9DB184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastWorkoutConfigViewController.m; sourceTree = "<group>"; };
 		21B357BC183016E5000B0566 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		21B357BD183016E5000B0566 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		21B357C018301894000B0566 /* WorkoutProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutProgressViewController.m; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				B21B9FE9182D54B300F8C3EC /* Images.xcassets */,
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
 				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
+				21AFD9DA184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.h */,
+				21AFD9DB184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m */,
 				21B357C71832C58F000B0566 /* WorkoutSummaryViewController.h */,
 				21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */,
 				21B357C61830C061000B0566 /* WorkoutProgressViewController.h */,
@@ -356,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AFD9DC184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m in Sources */,
 				B22BF723183D48970008A881 /* PreviousWorkoutCell.m in Sources */,
 				212693AB1849C2180068AC84 /* SelectAudioMetricsViewController.m in Sources */,
 				219E812E183DBA100021E82F /* WorkoutDetailsViewController.m in Sources */,
