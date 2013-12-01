@@ -42,8 +42,25 @@
     
     // filter date
     if (self.date != NULL) {
-        NSDate *startDate = [self.date dateByAddingTimeInterval:-60*60*24];
-        NSDate *endDate = [startDate dateByAddingTimeInterval:60*60*24];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:self.date];
+        NSInteger hour = [components hour] + 5; // ACCOUNTING FOR TIME ZONE
+        NSInteger minute = [components minute];
+        NSInteger second = [components second];
+
+        second = 0;
+        int dayOffset = 60 * 60 * 24;
+        int randomHourComponentDatePickerTacksOnToItsDate = 60 * 60 * hour;
+        int randomMinuteComponentDatePickerTacksOnToItsDate = 60 * minute;
+        int randomSecondComponentDatePickerTacksOnToItsDate = second;
+
+        int startDateOffset = 0
+            + randomHourComponentDatePickerTacksOnToItsDate
+            + randomMinuteComponentDatePickerTacksOnToItsDate
+            + randomSecondComponentDatePickerTacksOnToItsDate;
+
+        NSDate *startDate = [self.date dateByAddingTimeInterval:0 - startDateOffset];
+        NSDate *endDate = [startDate dateByAddingTimeInterval:dayOffset];
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"((date >= %@) AND (date < %@)) || (date = nil)",startDate,endDate];
         [fetchRequest setPredicate:predicate];
     }
@@ -51,13 +68,6 @@
     // make request
     NSError *error;
     self.workouts = [context executeFetchRequest:fetchRequest error:&error];
-    
-//    self.workouts = [[NSArray alloc]
-//     initWithObjects:@"Alpha",
-//     @"Bravo",
-//     @"Charlie", nil];
-    
-    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -109,11 +119,7 @@ cell.workoutHeader.text = stringFromDate;
     [formatter setDateStyle:NSDateFormatterLongStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *dateLabel =[formatter stringFromDate:workout.date];
-    NSLog(@"%@", dateLabel);
     cell.workoutHeader.accessibilityLabel = dateLabel;
-    
-
-//  //cell.metricValue.text = [NSString stringWithFormat:@"%@", [workout valueForKey:self.metric]];
     
     if ([self.metric isEqualToString:@"totalTime"]) {
         cell.metricValue.text = [NSString stringWithFormat:@"%@",[workout getDisplayTime]];
@@ -135,55 +141,5 @@ cell.workoutHeader.text = stringFromDate;
     [self.navigationController pushViewController:detailController animated:YES];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

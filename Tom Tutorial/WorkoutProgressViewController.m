@@ -202,14 +202,14 @@
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"End Workout Confirmation"
                                                       message:@"Do you want to end this workout?"
                                                      delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Definitely End Workout", nil];
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:@"Definitely End Workout", @"Cancel", nil];
     [message show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
+    if (buttonIndex == 0) {
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
         AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
         [av speakUtterance:endUtterance];
