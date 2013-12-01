@@ -90,7 +90,7 @@
     clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
-    if (self.timeIntervalReading > 0 && (int)elapsed%self.timeIntervalReading ==0 && secs > 5) {
+    if (self.workoutSettings.timeAudioInterval > 0 && (int)elapsed%(int)self.workoutSettings.timeAudioInterval ==0 && secs > 5) {
         [self readIntervalWithTime:elapsed];
     }
     
@@ -131,10 +131,14 @@
     }
     
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:[self getSpokenTime:elapsed]];
-    [av speakUtterance:timeUtterance];
-    AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
-    [av speakUtterance:HRUtterance];
+    if (self.workoutSettings.timeAudioOn) {
+        AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:[self getSpokenTime:elapsed]];
+        [av speakUtterance:timeUtterance];
+    }
+    if (self.workoutSettings.heartRateAudioOn) {
+        AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
+        [av speakUtterance:HRUtterance];
+    }
 }
 
 - (NSTimeInterval)getTotalTimeElapsed

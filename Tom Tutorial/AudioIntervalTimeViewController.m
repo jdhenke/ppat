@@ -13,6 +13,7 @@
 @end
 
 NSDictionary *timeIntervalDict;
+NSArray *intervalValues;
 
 @implementation AudioIntervalTimeViewController
 
@@ -38,6 +39,10 @@ NSDictionary *timeIntervalDict;
                             };
 
     }
+    if (!intervalValues)
+    {
+        intervalValues = @[@0, @30, @60, @120, @300, @600, @900, @1800, @3600, @7200];
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -55,6 +60,12 @@ NSDictionary *timeIntervalDict;
     self.timeIntervals = [[NSArray alloc] initWithObjects:
                          @"No time", @"30 seconds", @"1 minute",@"2 minutes", @"5 minutes",
                          @"10 minutes",@"15 minutes", @"30 minutes",@"1 hour", @"2 hours",nil];
+    if (self.workoutSettings.timeAudioInterval)
+    {
+        NSNumber *audioInterval = [NSNumber numberWithInteger:self.workoutSettings.timeAudioInterval];
+        NSUInteger index = [intervalValues indexOfObject:audioInterval];
+        [timePicker selectRow:index inComponent:0 animated:NO];
+    }
 
 }
 
@@ -87,7 +98,14 @@ numberOfRowsInComponent:(NSInteger)component
     WorkoutProgressViewController *workoutProgressViewController = [[navigationController viewControllers] objectAtIndex:0];
     NSInteger selectedRow = [timePicker selectedRowInComponent:0];
     NSString *selectedTime = [timeIntervals objectAtIndex:selectedRow];
-    workoutProgressViewController.timeIntervalReading = [[timeIntervalDict valueForKey:selectedTime] integerValue];
+    
+    if (self.workoutSettings) {
+        self.workoutSettings.timeAudioInterval = [[timeIntervalDict valueForKey:selectedTime] integerValue];
+        workoutProgressViewController.workoutSettings = self.workoutSettings;
+    }
+    // TODO: create a new workoutSettings if it doesn't already exist?
+    
+    //workoutProgressViewController.timeIntervalReading = [[timeIntervalDict valueForKey:selectedTime] integerValue];
 }
 
 @end

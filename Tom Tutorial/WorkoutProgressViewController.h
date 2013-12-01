@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WorkoutSummaryViewController.h"
+#import "WorkoutSettings.h"
 
 @class WorkoutProgressViewController;
 
@@ -18,6 +19,7 @@
     bool running;
 }
 
+@property (nonatomic, weak) WorkoutSettings *workoutSettings;
 @property (nonatomic) NSInteger timeIntervalReading;
 @property (weak, nonatomic) IBOutlet UILabel *clock;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
