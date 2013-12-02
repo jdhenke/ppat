@@ -10,6 +10,7 @@
 		190E40961848C39A00C95DFF /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAFC18318FBB0083B87B /* WFConnector.framework */; };
 		190E40991848C3AD00C95DFF /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40971848C3AD00C95DFF /* libstdc++.6.0.9.dylib */; };
 		190E409A1848C3AD00C95DFF /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40981848C3AD00C95DFF /* libstdc++.6.dylib */; };
+		194420BB184C1D3F0052E8F6 /* WahooManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 194420BA184C1D3F0052E8F6 /* WahooManager.m */; };
 		19C6FAF718318EEA0083B87B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */; };
 		19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF818318EF30083B87B /* CoreBluetooth.framework */; };
 		212693AB1849C2180068AC84 /* SelectAudioMetricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212693AA1849C2180068AC84 /* SelectAudioMetricsViewController.m */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		190E40971848C3AD00C95DFF /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		190E40981848C3AD00C95DFF /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		194420B9184C1D3F0052E8F6 /* WahooManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WahooManager.h; sourceTree = "<group>"; };
+		194420BA184C1D3F0052E8F6 /* WahooManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WahooManager.m; sourceTree = "<group>"; };
 		19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		19C6FAF818318EF30083B87B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		19C6FAFC18318FBB0083B87B /* WFConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WFConnector.framework; path = wf_api_3.0/dependencies/WFConnector.framework; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				B207B35B184533EB00478E1A /* WorkoutAveragesTableViewController.m */,
 				B23D978B1845390F00405A39 /* MetricAverageTableCell.h */,
 				B23D978C1845390F00405A39 /* MetricAverageTableCell.m */,
+				194420B9184C1D3F0052E8F6 /* WahooManager.h */,
+				194420BA184C1D3F0052E8F6 /* WahooManager.m */,
 			);
 			path = "Tom Tutorial";
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				B23D978D1845390F00405A39 /* MetricAverageTableCell.m in Sources */,
 				B269DC261832C56B008ED0F3 /* MetricSelectorViewController.m in Sources */,
 				B207B35C184533EB00478E1A /* WorkoutAveragesTableViewController.m in Sources */,
+				194420BB184C1D3F0052E8F6 /* WahooManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -465,7 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

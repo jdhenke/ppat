@@ -25,6 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -51,13 +52,27 @@
     clock.accessibilityLabel = clock.text;
     
     // Update the heart rate.
-    heartRate.text = @"Heart Rate: 120 beats per minute";
+    heartRate.text = @"Heart rate monitor is not connected.";
     heartRate.accessibilityLabel = heartRate.text;
     [self startClock];
     
     self.pauseResumeButton.accessibilityLabel = @"Pause";
     NSLog([NSString stringWithFormat: @"Time audio interval: %d", self.workoutSettings.timeAudioInterval]);
     
+    // Set the default average heart rate
+    averageHeartRate = 0;
+    totalBeatsOverTime = 0;
+    numTimeSampleHR = 0;
+
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    // Start listeninig for data
+    // register for HW connector notifications.
+}
+
+-(void) viewDidDisappear:(BOOL)animated {
 
 }
 
@@ -65,10 +80,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)updateHeartRate {
-    //TODO(mwchen): Update this when the heart rate monitor is connected.
 }
 
 - (void)updateTime
@@ -96,6 +107,9 @@
     }
     
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
+    
+    // Update the average heart rate
+    [self calculateAverageHeartRate];
 }
 
 - (NSString *)getSpokenTime:(NSTimeInterval)elapsed
@@ -159,6 +173,9 @@
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Pausing Workout"];
     [av speakUtterance:utterance];
+    
+    // Stop listening for heart rate information.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)pauseClock
@@ -171,8 +188,10 @@
 {
     running = true;
     startTime = [NSDate timeIntervalSinceReferenceDate];
-
+    
     [self updateTime];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHeartRate:) name:@"HeartRate" object:nil];
 }
 
 - (void)resumeWorkout
@@ -244,6 +263,7 @@
     
     [workout setValue:totalTime forKey:@"totalTime"];
     [workout setValue:[NSDate date] forKey:@"date"];
+    [workout setValue:[NSNumber numberWithInteger:averageHeartRate] forKey:@"avgHeartRate"];
     NSError *error = nil;
     
 	if (![context save:&error]) {
@@ -257,6 +277,28 @@
 	}
     return (Workout *)workout;
 }
+
+- (void) updateHeartRate:(NSNotification *)hrData {
+    NSDictionary *dataDict = [hrData userInfo];
+    NSLog(@"trying to log heart rate");
+    if (dataDict !=nil) {
+        heartRateData = [dataDict objectForKey:@"heartRateData"];
+        heartRate.text = [NSString stringWithFormat:@"Heart Rate: %@",[heartRateData formattedHeartrate:TRUE]];
+        heartRate.accessibilityLabel = heartRate.text;
+    }
+}
+
+- (void) calculateAverageHeartRate{
+    if (heartRateData !=nil) {
+        NSInteger computedHR =(NSInteger)[heartRateData computedHeartrate];
+        totalBeatsOverTime = totalBeatsOverTime + computedHR;
+        numTimeSampleHR = numTimeSampleHR + 1;
+        averageHeartRate = totalBeatsOverTime/numTimeSampleHR;
+        NSLog(@"Average Heart Rate: %d", averageHeartRate);
+    }
+}
+
+
 
 
 @end

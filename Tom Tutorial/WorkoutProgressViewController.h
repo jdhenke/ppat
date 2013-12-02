@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WorkoutSummaryViewController.h"
 #import "WorkoutSettings.h"
+#import  <WFConnector/WFConnector.h>
 
 @class WorkoutProgressViewController;
 
@@ -17,6 +18,10 @@
     NSTimeInterval startTime;
     NSTimeInterval lastElapsed;
     bool running;
+    WFHeartrateData* heartRateData;
+    NSInteger totalBeatsOverTime;
+    NSInteger averageHeartRate;
+    NSInteger numTimeSampleHR;
 }
 
 @property (nonatomic, weak) WorkoutSettings *workoutSettings;

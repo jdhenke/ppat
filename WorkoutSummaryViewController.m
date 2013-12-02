@@ -37,7 +37,12 @@
     self.totalTime.text = [NSString stringWithFormat: @"Total time: %@", [self.workout getDisplayTime]];
     self.totalTime.accessibilityLabel = [self.workout getSpokenTime];
     
-    NSString *heartRateText = @"Heart Rate: 120 beats per minute";
+    // Accounts for when the heart rate monitor did not calculate an average heart rate.
+    NSString *heartRateText = @"Heart rate monitor was not connected.";
+    
+    if (self.workout.avgHeartRate > 0) {
+        heartRateText = [NSString stringWithFormat: @"Average Heart Rate: %@", [self.workout getDisplayHR]];
+    }
     self.heartRate.text = heartRateText;
     self.heartRate.accessibilityLabel = heartRateText;
 }
