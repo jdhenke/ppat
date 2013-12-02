@@ -52,12 +52,16 @@
     clock.accessibilityLabel = clock.text;
     
     // Update the heart rate.
-    heartRate.text = @"Heart rate monitor not connected.";
+    heartRate.text = @"Heart rate monitor is not connected.";
     heartRate.accessibilityLabel = heartRate.text;
     [self startClock];
     
     self.pauseResumeButton.accessibilityLabel = @"Pause";
     
+    // Set the default average heart rate
+    averageHeartRate = 0;
+    totalBeatsOverTime = 0;
+    numTimeSampleHR = 0;
 
 }
 
@@ -103,6 +107,8 @@
     
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
     
+    // Update the average heart rate
+    [self calculateAverageHeartRate];
 }
 
 - (NSString *)getSpokenTime:(NSTimeInterval)elapsed
@@ -256,6 +262,7 @@
     
     [workout setValue:totalTime forKey:@"totalTime"];
     [workout setValue:[NSDate date] forKey:@"date"];
+    [workout setValue:[NSNumber numberWithInteger:averageHeartRate] forKey:@"avgHeartRate"];
     NSError *error = nil;
     
 	if (![context save:&error]) {
@@ -280,6 +287,15 @@
     }
 }
 
+- (void) calculateAverageHeartRate{
+    if (heartRateData !=nil) {
+        NSInteger computedHR =(NSInteger)[heartRateData computedHeartrate];
+        totalBeatsOverTime = totalBeatsOverTime + computedHR;
+        numTimeSampleHR = numTimeSampleHR + 1;
+        averageHeartRate = totalBeatsOverTime/numTimeSampleHR;
+        NSLog(@"%d", averageHeartRate);
+    }
+}
 
 
 

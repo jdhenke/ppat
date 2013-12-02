@@ -19,6 +19,9 @@
     NSTimeInterval lastElapsed;
     bool running;
     WFHeartrateData* heartRateData;
+    NSInteger totalBeatsOverTime;
+    NSInteger averageHeartRate;
+    NSInteger numTimeSampleHR;
 }
 
 @property (nonatomic, weak) WorkoutSettings *workoutSettings;
