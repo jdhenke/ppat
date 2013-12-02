@@ -12,8 +12,11 @@
 		190E409A1848C3AD00C95DFF /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 190E40981848C3AD00C95DFF /* libstdc++.6.dylib */; };
 		19C6FAF718318EEA0083B87B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */; };
 		19C6FAF918318EF30083B87B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6FAF818318EF30083B87B /* CoreBluetooth.framework */; };
+		212693AB1849C2180068AC84 /* SelectAudioMetricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212693AA1849C2180068AC84 /* SelectAudioMetricsViewController.m */; };
+		2142AE141849CB050024622A /* WorkoutSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2142AE131849CB050024622A /* WorkoutSettings.m */; };
 		21933F49184668F50081CB35 /* SpeakableTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 21933F48184668F50081CB35 /* SpeakableTime.m */; };
 		219E812E183DBA100021E82F /* WorkoutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219E812D183DBA100021E82F /* WorkoutDetailsViewController.m */; };
+		21AFD9DC184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AFD9DB184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m */; };
 		21B357BE183016E5000B0566 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357BD183016E5000B0566 /* Workout.m */; };
 		21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C018301894000B0566 /* WorkoutProgressViewController.m */; };
 		21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */; };
@@ -61,10 +64,16 @@
 		19C6FAF618318EEA0083B87B /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		19C6FAF818318EF30083B87B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		19C6FAFC18318FBB0083B87B /* WFConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WFConnector.framework; path = wf_api_3.0/dependencies/WFConnector.framework; sourceTree = "<group>"; };
+		212693A91849C2180068AC84 /* SelectAudioMetricsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectAudioMetricsViewController.h; path = ../SelectAudioMetricsViewController.h; sourceTree = "<group>"; };
+		212693AA1849C2180068AC84 /* SelectAudioMetricsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectAudioMetricsViewController.m; path = ../SelectAudioMetricsViewController.m; sourceTree = "<group>"; };
+		2142AE121849CB050024622A /* WorkoutSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSettings.h; sourceTree = "<group>"; };
+		2142AE131849CB050024622A /* WorkoutSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSettings.m; sourceTree = "<group>"; };
 		21933F47184668F50081CB35 /* SpeakableTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakableTime.h; sourceTree = "<group>"; };
 		21933F48184668F50081CB35 /* SpeakableTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakableTime.m; sourceTree = "<group>"; };
 		219E812C183DBA100021E82F /* WorkoutDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutDetailsViewController.h; sourceTree = "<group>"; };
 		219E812D183DBA100021E82F /* WorkoutDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutDetailsViewController.m; sourceTree = "<group>"; };
+		21AFD9DA184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastWorkoutConfigViewController.h; sourceTree = "<group>"; };
+		21AFD9DB184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastWorkoutConfigViewController.m; sourceTree = "<group>"; };
 		21B357BC183016E5000B0566 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		21B357BD183016E5000B0566 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		21B357C018301894000B0566 /* WorkoutProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutProgressViewController.m; sourceTree = "<group>"; };
@@ -183,6 +192,8 @@
 		B21B9FDA182D54B300F8C3EC /* Tom Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				212693A91849C2180068AC84 /* SelectAudioMetricsViewController.h */,
+				212693AA1849C2180068AC84 /* SelectAudioMetricsViewController.m */,
 				219E812C183DBA100021E82F /* WorkoutDetailsViewController.h */,
 				219E812D183DBA100021E82F /* WorkoutDetailsViewController.m */,
 				21933F47184668F50081CB35 /* SpeakableTime.h */,
@@ -194,11 +205,15 @@
 				B21B9FE9182D54B300F8C3EC /* Images.xcassets */,
 				B21B9FDB182D54B300F8C3EC /* Supporting Files */,
 				B21BA007182D54DB00F8C3EC /* Storyboard.storyboard */,
+				21AFD9DA184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.h */,
+				21AFD9DB184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m */,
 				21B357C71832C58F000B0566 /* WorkoutSummaryViewController.h */,
 				21B357C81832C58F000B0566 /* WorkoutSummaryViewController.m */,
 				21B357C61830C061000B0566 /* WorkoutProgressViewController.h */,
 				21B357C018301894000B0566 /* WorkoutProgressViewController.m */,
 				B21BA009182D5C3800F8C3EC /* Model.xcdatamodeld */,
+				2142AE121849CB050024622A /* WorkoutSettings.h */,
+				2142AE131849CB050024622A /* WorkoutSettings.m */,
 				21B357BC183016E5000B0566 /* Workout.h */,
 				21B357BD183016E5000B0566 /* Workout.m */,
 				B21BA00E1830125800F8C3EC /* AudioIntervalTimeViewController.h */,
@@ -346,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AFD9DC184BAB4C00FE5FE3 /* LastWorkoutConfigViewController.m in Sources */,
 				B22BF723183D48970008A881 /* PreviousWorkoutCell.m in Sources */,
+				212693AB1849C2180068AC84 /* SelectAudioMetricsViewController.m in Sources */,
 				219E812E183DBA100021E82F /* WorkoutDetailsViewController.m in Sources */,
 				21B357C91832C58F000B0566 /* WorkoutSummaryViewController.m in Sources */,
 				B207B35618452ADF00478E1A /* SelectDateViewController.m in Sources */,
@@ -354,6 +371,7 @@
 				B21B9FE5182D54B300F8C3EC /* AppDelegate.m in Sources */,
 				B20433B71830220800308F13 /* AudioIntervalDistanceViewController.m in Sources */,
 				B21BA0101830125800F8C3EC /* AudioIntervalTimeViewController.m in Sources */,
+				2142AE141849CB050024622A /* WorkoutSettings.m in Sources */,
 				B21B9FE1182D54B300F8C3EC /* main.m in Sources */,
 				21B357C118301894000B0566 /* WorkoutProgressViewController.m in Sources */,
 				21933F49184668F50081CB35 /* SpeakableTime.m in Sources */,

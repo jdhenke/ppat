@@ -90,7 +90,7 @@
     clock.accessibilityLabel = [self getSpokenTime:elapsed];
     
     // If the time is at the time interval specified, read the interval information out loud.
-    if (self.timeIntervalReading > 0 && (int)elapsed%self.timeIntervalReading ==0 && secs > 5) {
+    if (self.workoutSettings.timeAudioInterval > 0 && (int)elapsed%(int)self.workoutSettings.timeAudioInterval ==0 && secs > 5) {
         [self readIntervalWithTime:elapsed];
     }
     
@@ -133,10 +133,14 @@
     }
     
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:[self getSpokenTime:elapsed]];
-    [av speakUtterance:timeUtterance];
-    AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
-    [av speakUtterance:HRUtterance];
+    if (self.workoutSettings.timeAudioOn) {
+        AVSpeechUtterance *timeUtterance = [[AVSpeechUtterance alloc]initWithString:[self getSpokenTime:elapsed]];
+        [av speakUtterance:timeUtterance];
+    }
+    if (self.workoutSettings.heartRateAudioOn) {
+        AVSpeechUtterance *HRUtterance = [[AVSpeechUtterance alloc]initWithString:heartRate.text];
+        [av speakUtterance:HRUtterance];
+    }
 }
 
 - (NSTimeInterval)getTotalTimeElapsed
@@ -201,14 +205,14 @@
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"End Workout Confirmation"
                                                       message:@"Do you want to end this workout?"
                                                      delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Definitely End Workout", nil];
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:@"Definitely End Workout", @"Cancel", nil];
     [message show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
+    if (buttonIndex == 0) {
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
         AVSpeechUtterance *endUtterance = [[AVSpeechUtterance alloc]initWithString:@"Ending Workout"];
         [av speakUtterance:endUtterance];

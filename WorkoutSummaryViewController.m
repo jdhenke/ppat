@@ -69,14 +69,14 @@
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Delete Workout Confirmation"
                                                       message:@"Do you want to delete this workout?"
                                                      delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Definitely Delete Workout", nil];
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:@"Definitely Delete Workout",@"Cancel", nil];
     [message show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
+    if (buttonIndex == 0) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         NSManagedObjectContext* context = appDelegate.managedObjectContext;
         [context deleteObject:workout];
