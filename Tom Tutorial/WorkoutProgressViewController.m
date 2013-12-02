@@ -293,7 +293,7 @@
         totalBeatsOverTime = totalBeatsOverTime + computedHR;
         numTimeSampleHR = numTimeSampleHR + 1;
         averageHeartRate = totalBeatsOverTime/numTimeSampleHR;
-        NSLog(@"%d", averageHeartRate);
+        NSLog(@"Average Heart Rate: %d", averageHeartRate);
     }
 }
 
