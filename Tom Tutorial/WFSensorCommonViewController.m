@@ -106,8 +106,9 @@
     if ( hardwareConnector.isCommunicationHWReady )
     {
         // check for an existing connection to this sensor type.
+        sensorType = WF_SENSORTYPE_HEARTRATE;
         NSArray* connections = [hardwareConnector getSensorConnections:sensorType];
-        WFSensorConnection* sensor = ([connections count]>0) ? (WFSensorConnection*)[connections objectAtIndex:0] : nil;
+        WFSensorConnection* sensor ;
         
         // if a connection exists, cache it and set the delegate to this
         // instance (this will allow receiving connection state changes).
@@ -441,7 +442,8 @@
 			// otherwise, get the params from the stored settings.
 			else
 			{
-            
+                params.sensorType = WF_SENSORTYPE_HEARTRATE;
+                sensorType = WF_SENSORTYPE_HEARTRATE;
 				params = [hardwareConnector.settings connectionParamsForSensorType:sensorType];
 			}
 			

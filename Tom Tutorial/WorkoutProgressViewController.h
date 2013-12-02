@@ -8,19 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "WorkoutSummaryViewController.h"
-#import "WFSensorCommonViewController.h"
-#import "SensorManagerViewController.h"
 
 @class WorkoutProgressViewController;
 
-@interface WorkoutProgressViewController : WFSensorCommonViewController <WFSensorConnectionDelegate, UIAlertViewDelegate>
+@interface WorkoutProgressViewController : UIViewController <UIAlertViewDelegate>
 {
     NSTimeInterval startTime;
     NSTimeInterval lastElapsed;
     bool running;
 }
 
-@property (readonly, nonatomic) WFHeartrateConnection* heartrateConnection;
 @property (nonatomic) NSInteger timeIntervalReading;
 @property (weak, nonatomic) IBOutlet UILabel *clock;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;

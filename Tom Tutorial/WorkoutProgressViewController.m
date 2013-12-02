@@ -19,15 +19,13 @@
 @implementation WorkoutProgressViewController
 
 @synthesize clock, heartRate, pauseResumeButton, savedSender;
-@synthesize heartrateConnection;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        applicableNetworks = WF_NETWORKTYPE_BTLE | WF_NETWORKTYPE_ANTPLUS;
-        sensorType = WF_SENSORTYPE_HEARTRATE;
+        
     }
     return self;
 }
@@ -63,10 +61,7 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    if ( hardwareConnector.isCommunicationHWReady )
-    {
-        [self updateSensorStatus];
-    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -261,178 +256,8 @@
     return (Workout *)workout;
 }
 
-// Wahoo HR monitor
-- (void)updateHeartRate {
-    [self updateData];
+- (void) updateHeartRate {
     
-    WFHeartrateData* hrData = [self.heartrateConnection getHeartrateData];
-    NSLog(@"%d", [self.heartrateConnection hasData]);
-	//WFHeartrateRawData* hrRawData = [self.heartrateConnection getHeartrateRawData];
-	if ( hrData != nil )
-	{
-        
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:hrData.computedHeartrate];
-        
-        // unformatted value.
-		// computedHeartrateLabel.text = [NSString stringWithFormat:@"%d", hrData.computedHeartrate];
-        
-        // update basic data.
-        heartRate.text = [hrData formattedHeartrate:TRUE];
-		//beatTimeLabel.text = [NSString stringWithFormat:@"%d", hrData.beatTime];
-		
-        // update raw data.
-		//beatCountLabel.text = [NSString stringWithFormat:@"%d", hrRawData.beatCount];
-		//previousBeatLabel.text = [NSString stringWithFormat:@"%d", hrRawData.previousBeatTime];
-        
-        // BTLE HR monitors optionally transmit R-R intervals.  this demo does not
-        // display R-R values.  however, the following code is included to demonstrate
-        // how to read and parse R-R intervals.
-        if ( [hrData isKindOfClass:[WFBTLEHeartrateData class]] )
-        {
-            NSArray* rrIntervals = [(WFBTLEHeartrateData*)hrData rrIntervals];
-            for ( NSNumber* rr in rrIntervals )
-            {
-                NSLog(@"R-R Interval: %1.3f s.", [rr doubleValue]);
-            }
-        }
-        
-	}
-	else
-	{
-        heartRate.text = @"Heart rate monitor is unavailable";
-	}
-    
-}
-
-//--------------------------------------------------------------------------------
-- (void)onSensorConnected:(WFSensorConnection*)connectionInfo
-{
-    WFHeartrateConnection* hrc = self.heartrateConnection;
-    if ( hrc )
-    {
-       // hrc.delegate = self;
-    }
-}
-
-
-//--------------------------------------------------------------------------------
-- (WFHeartrateConnection*)heartrateConnection
-{
-	WFHeartrateConnection* retVal = nil;
-    NSLog(@"Sensor connection: %@", self.sensorConnection);
-	if ( [self.sensorConnection isKindOfClass:[WFHeartrateConnection class]] )
-	{
-		retVal = (WFHeartrateConnection*)self.sensorConnection;
-	}
-	
-	return retVal;
-}
-
-- (IBAction)searchClicked:(id)sender
-{
-//    // configure and display the sensor manager view.
-//	SensorManagerViewController* vc = [[SensorManagerViewController alloc] initWithNibName:@"SensorManagerViewController" bundle:nil];
-//	[vc configForSensorType:sensorType onNetworks:applicableNetworks];
-    
-    // get the current connection status.
-	WFSensorConnectionStatus_t connState = WF_SENSOR_CONNECTION_STATUS_IDLE;
-	if ( sensorConnection != nil )
-	{
-		connState = sensorConnection.connectionStatus;
-	}
-	
-	// set the button state based on the connection state.
-	switch (connState)
-	{
-		case WF_SENSOR_CONNECTION_STATUS_IDLE:
-		{
-			// create the connection params.
-			WFConnectionParams* params = nil;
-			//
-			// if wildcard search is specified, create empty connection params.
-			if ( wildcardSwitch.on )
-			{
-				params = [[WFConnectionParams alloc] init];
-				params.sensorType = sensorType;
-			}
-			//
-			// otherwise, get the params from the stored settings.
-			else
-			{
-				params = [hardwareConnector.settings connectionParamsForSensorType:sensorType];
-			}
-			
-			if ( params != nil)
-			{
-                // set the search timeout.
-                params.searchTimeout = hardwareConnector.settings.searchTimeout;
-                
-                // if the connection request is a wildcard, use proximity search.
-                if ( params.isWildcard )
-                {
-                    // proximity pairing is available only in the AP2 version of
-                    // the Wahoo fisica hardware.  the proximity search facilitates
-                    // pairing an unknown device when more than one of the device
-                    // type are present.  the range WF_PROXIMITY_RANGE_1 is the
-                    // closest - meaning the device must be very close to the
-                    // fisica key in order to connect.  ranges are relative 1-10.
-                    //
-                    // NOTE:  if the fisica hardware is the AP1 version, the API
-                    // will issue a standard connection request.  this case is the
-                    // same as invoking requestSensorConnection:.
-                    //
-                    // use proximity search.
-                    if ( proximitySwitch.on )
-                    {
-                        self.sensorConnection = [hardwareConnector requestSensorConnection:params withProximity:WF_PROXIMITY_RANGE_2];
-                    }
-                    //
-                    // use normal search.
-                    else
-                    {
-                        self.sensorConnection = [hardwareConnector requestSensorConnection:params];
-                    }
-                }
-                // otherwise, use normal connection request.
-                else
-                {
-                    self.sensorConnection = [hardwareConnector requestSensorConnection:params];
-                }
-                
-                // set delegate to receive connection status changes.
-                self.sensorConnection.delegate = self;
-			}
-			break;
-		}
-			
-		case WF_SENSOR_CONNECTION_STATUS_CONNECTING:
-		case WF_SENSOR_CONNECTION_STATUS_CONNECTED:
-			// disconnect the sensor.
-			[self.sensorConnection disconnect];
-			break;
-			
-		case WF_SENSOR_CONNECTION_STATUS_DISCONNECTING:
-        case WF_SENSOR_CONNECTION_STATUS_INTERRUPTED:
-			// do nothing.
-			break;
-	}
-	
-	//[self checkState];
-
-}
-
-- (void)updateSensorStatus
-{
-	// configure the status fields for the heartrate sensor.
-	NSArray* connections = [hardwareConnector getSensorConnections:WF_SENSORTYPE_HEARTRATE];
-	WFSensorConnection* sensor = ([connections count]>0) ? (WFSensorConnection*)[connections objectAtIndex:0] : nil;
-    if ( sensor )
-    {
-        BOOL conn = (sensor != nil && sensor.isConnected) ? TRUE : FALSE;
-        USHORT devId = sensor.deviceNumber;
-        NSLog(@"%d", conn);
-        NSLog(@"Device id:%d", devId);
-    }
 }
 
 
