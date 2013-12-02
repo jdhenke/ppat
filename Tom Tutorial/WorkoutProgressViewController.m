@@ -56,6 +56,7 @@
     [self startClock];
     
     self.pauseResumeButton.accessibilityLabel = @"Pause";
+    NSLog([NSString stringWithFormat: @"Time audio interval: %d", self.workoutSettings.timeAudioInterval]);
     
 
 }

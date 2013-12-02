@@ -17,6 +17,8 @@
 
 @implementation LastWorkoutConfigViewController
 
+@synthesize workoutSettings;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -70,6 +72,7 @@
 //            audioIntervalTimeViewController.workoutSettings = self.workoutSettings;
 //            
 //        }
+        
         if ([segue.identifier isEqualToString:@"StartWorkoutSegue"]) {
             UINavigationController *navigationController = segue.destinationViewController;
             WorkoutProgressViewController *workoutProgressViewController = [[navigationController viewControllers] objectAtIndex:0];

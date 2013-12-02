@@ -11,7 +11,7 @@
 
 @interface LastWorkoutConfigViewController : UIViewController
 
-@property (weak, nonatomic) WorkoutSettings *workoutSettings;
+@property (strong, nonatomic) WorkoutSettings *workoutSettings;
 @property (weak, nonatomic) IBOutlet UILabel *audioMetrics;
 @property (weak, nonatomic) IBOutlet UILabel *audioTimeInterval;
 @end
