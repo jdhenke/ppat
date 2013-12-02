@@ -98,9 +98,10 @@
 {
     NSLog(@"HAS DATA");
     WFHeartrateData* hrData = [sensorConnection getHeartrateData];
-    NSLog(@"%@", [hrData formattedHeartrate:TRUE]);
-    NSDictionary *dataDict = [NSDictionary dictionaryWithObject:hrData forKey:@"heartRateData"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"HeartRate" object:dataDict];
+    if (hrData!=nil) {
+        NSDictionary *dataDict = [NSDictionary dictionaryWithObject:hrData forKey:@"heartRateData"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"HeartRate" object:nil userInfo:dataDict];
+    }
 }
 
 #pragma mark -

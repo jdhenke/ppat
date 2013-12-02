@@ -57,18 +57,18 @@
     [self startClock];
     
     self.pauseResumeButton.accessibilityLabel = @"Pause";
+    
+
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
     // Start listeninig for data
     // register for HW connector notifications.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHeartRate:) name:@"HeartRate" object:nil];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
-    // Stop listening for heart rate information.
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,7 +103,6 @@
     
     [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
     
-    //[self updateHeartRate];
 }
 
 - (NSString *)getSpokenTime:(NSTimeInterval)elapsed
@@ -167,6 +166,9 @@
     AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Pausing Workout"];
     [av speakUtterance:utterance];
+    
+    // Stop listening for heart rate information.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)pauseClock
@@ -179,9 +181,10 @@
 {
     running = true;
     startTime = [NSDate timeIntervalSinceReferenceDate];
-
+    
     [self updateTime];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHeartRate:) name:@"HeartRate" object:nil];
 }
 
 - (void)resumeWorkout
@@ -269,9 +272,11 @@
 
 - (void) updateHeartRate:(NSNotification *)hrData {
     NSDictionary *dataDict = [hrData userInfo];
+    NSLog(@"trying to log heart rate");
     if (dataDict !=nil) {
         heartRateData = [dataDict objectForKey:@"heartRateData"];
-        NSLog(@"%@", [heartRateData formattedHeartrate:TRUE]);
+        heartRate.text = [NSString stringWithFormat:@"Heart Rate: %@",[heartRateData formattedHeartrate:TRUE]];
+        heartRate.accessibilityLabel = heartRate.text;
     }
 }
 
