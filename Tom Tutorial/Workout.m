@@ -69,4 +69,15 @@
     return [NSString stringWithFormat:@"%@ beats per minute", self.avgHeartRate];
 }
 
+- (NSInteger)getMinutes
+{
+    NSInteger ti = [self.totalTime integerValue];
+    return (ti / 60) % 60;
+}
+
+- (NSInteger)getHRValue
+{
+    return [self.avgHeartRate intValue];
+}
+
 @end

@@ -45,6 +45,33 @@
     }
     self.heartRate.text = heartRateText;
     self.heartRate.accessibilityLabel = heartRateText;
+    
+    // Accounts for when the settings have not been set for the person and no heart rate has been calculated.
+    NSString *calorieText = @"";
+    
+    /* Male->  Calories Burned = [(Age x 0.2017) + (Weight x 0.09036) + (Heart Rate x 0.6309) -- 55.0969] x Time / 4.184.
+       Female-> Calories Burned = [(Age x 0.074) -- (Weight x 0.05741) + (Heart Rate x 0.4472) -- 20.4022] x Time / 4.184.
+     */
+    
+    // Set the values to Jonathan's attribute.
+    NSInteger age = 58;
+    NSString *gender = @"Male";
+    NSInteger weight = 156;
+    double calculatedCaloriesBurned = 0;
+    
+    if (self.workout.avgHeartRate > 0 ) {
+        if ([gender isEqualToString:@"Male"]) {
+            calculatedCaloriesBurned = ((age * 0.2017) + (weight * 0.09036) + ([self.workout getHRValue] * 0.6309) - 55.0969) * [self.workout getMinutes] / 4.184;
+        }
+        else if ([gender isEqualToString:@"Female"]) {
+            calculatedCaloriesBurned = ((age * 0.074) - (weight * 0.05741) + ([self.workout getHRValue] * 0.4472) - 20.4022) * [self.workout getMinutes] / 4.184;
+        }
+        calorieText = [NSString stringWithFormat:@"Total Calories Burned: %f", calculatedCaloriesBurned];
+    }
+    
+    self.caloriesBurned.text = calorieText;
+    self.caloriesBurned.accessibilityLabel = calorieText;
+    
 }
 
 - (void)didReceiveMemoryWarning

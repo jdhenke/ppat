@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *totalTime;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
+@property (weak, nonatomic) IBOutlet UILabel *caloriesBurned;
 @property (weak, nonatomic) id savedSender;
 
 - (IBAction)deleteWorkout:(id)sender;
