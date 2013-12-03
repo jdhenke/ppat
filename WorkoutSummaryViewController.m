@@ -49,7 +49,9 @@
     // Accounts for when the settings have not been set for the person and no heart rate has been calculated.
     NSString *calorieText = @"";
     
-    /* Male->  Calories Burned = [(Age x 0.2017) + (Weight x 0.09036) + (Heart Rate x 0.6309) -- 55.0969] x Time / 4.184.
+    /* 
+       Based on http://fitnowtraining.com/2012/01/formula-for-calories-burned/
+       Male->  Calories Burned = [(Age x 0.2017) + (Weight x 0.09036) + (Heart Rate x 0.6309) -- 55.0969] x Time / 4.184.
        Female-> Calories Burned = [(Age x 0.074) -- (Weight x 0.05741) + (Heart Rate x 0.4472) -- 20.4022] x Time / 4.184.
      */
     
