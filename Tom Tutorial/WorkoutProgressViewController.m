@@ -285,6 +285,7 @@
         heartRateData = [dataDict objectForKey:@"heartRateData"];
         heartRate.text = [NSString stringWithFormat:@"Heart Rate: %@",[heartRateData formattedHeartrate:TRUE]];
         heartRate.accessibilityLabel = heartRate.text;
+        NSLog(@"Current heart rate: %@", [heartRateData formattedHeartrate:TRUE]);
     }
 }
 

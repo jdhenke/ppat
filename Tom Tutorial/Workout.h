@@ -22,6 +22,6 @@
 - (NSString *) getSpokenTime;
 - (NSString *) getDisplayHR;
 - (NSString *) getSpokenHR;
-- (NSInteger) getMinutes;
+- (double) getTimeInMinutes;
 - (NSInteger) getHRValue;
 @end

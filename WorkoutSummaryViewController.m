@@ -60,15 +60,20 @@
     NSString *gender = @"Male";
     NSInteger weight = 156;
     double calculatedCaloriesBurned = 0;
+    double minutes = [self.workout getTimeInMinutes];
     
     if (self.workout.avgHeartRate > 0 ) {
         if ([gender isEqualToString:@"Male"]) {
-            calculatedCaloriesBurned = ((age * 0.2017) + (weight * 0.09036) + ([self.workout getHRValue] * 0.6309) - 55.0969) * [self.workout getMinutes] / 4.184;
+            NSLog(@"Time portion: %f",minutes* 0.6307);
+            
+            //NSLog(@")([self.workout getHRValue] * 0.6309) - 55.0969) * [self.workout getMinutes] / 4.184
+            calculatedCaloriesBurned = ((age * 0.2017) + (weight * 0.09036) + ([self.workout getHRValue] * 0.6309) - 55.0969) * minutes / 4.184;
+            NSLog(@"%f", calculatedCaloriesBurned);
         }
         else if ([gender isEqualToString:@"Female"]) {
-            calculatedCaloriesBurned = ((age * 0.074) - (weight * 0.05741) + ([self.workout getHRValue] * 0.4472) - 20.4022) * [self.workout getMinutes] / 4.184;
+            calculatedCaloriesBurned = ((age * 0.074) - (weight * 0.05741) + ([self.workout getHRValue] * 0.4472) - 20.4022) * minutes/ 4.184;
         }
-        calorieText = [NSString stringWithFormat:@"Total Calories Burned: %f", calculatedCaloriesBurned];
+        calorieText = [NSString stringWithFormat:@"Total Calories Burned: %0.1f", calculatedCaloriesBurned];
     }
     
     self.caloriesBurned.text = calorieText;
