@@ -17,5 +17,5 @@
 @property (nonatomic, strong) Workout *selectedWorkout;
 @property (nonatomic, retain) IBOutlet UILabel *dateLabel;
 @property (nonatomic, retain) IBOutlet UILabel *totalTimeLabel;
-
+@property (nonatomic, retain) IBOutlet UILabel *avgHeartRateLabel;
 @end

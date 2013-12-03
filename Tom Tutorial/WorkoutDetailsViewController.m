@@ -18,7 +18,7 @@
 
 @synthesize dateLabel = _dateLabel;
 @synthesize totalTimeLabel = _totalTimeLabel;
-
+@synthesize avgHeartRateLabel = _avgHeartRateLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,6 +46,10 @@
     NSString *dateLabel =[formatter stringFromDate:self.selectedWorkout.date];
     NSLog(@"%@", dateLabel);
     self.dateLabel.accessibilityLabel = [NSString stringWithFormat: @"Date: %@", dateLabel];
+    
+    self.avgHeartRateLabel.text = [NSString stringWithFormat:@"Average heart rate: %@ bpm", self.selectedWorkout.avgHeartRate];
+    self.avgHeartRateLabel.accessibilityLabel= [NSString stringWithFormat:@"Average heart rate: %@ bpm", self.selectedWorkout.avgHeartRate];
+    
 }
 
 - (void)viewDidLoad

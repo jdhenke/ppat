@@ -35,7 +35,7 @@
 	// Do any additional setup after loading the view.
     NSLog(@"workout time: %@", self.workout.totalTime);
     self.totalTime.text = [NSString stringWithFormat: @"Total time: %@", [self.workout getDisplayTime]];
-    self.totalTime.accessibilityLabel = [self.workout getSpokenTime];
+    self.totalTime.accessibilityLabel = [NSString stringWithFormat: @"Total time: %@", [self.workout getSpokenTime]];
     
     // Accounts for when the heart rate monitor did not calculate an average heart rate.
     NSString *heartRateText = @"Heart rate monitor was not connected.";
