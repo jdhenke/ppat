@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="N1v-Ye-i2r">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--View Controller - Jonathan's Fitness App-->
@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rM8-vr-Uax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="1612"/>
+            <point key="canvasLocation" x="-341" y="732"/>
         </scene>
         <!--Table View Controller - Review Previous Workouts-->
         <scene sceneID="aQA-jX-U3q">
@@ -162,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqk-c2-YYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="1839"/>
+            <point key="canvasLocation" x="479" y="1371"/>
         </scene>
         <!--Workout List View Controller - Browse Workouts-->
         <scene sceneID="fbh-3r-LyY">
@@ -218,7 +218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-m5-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1811" y="1650"/>
+            <point key="canvasLocation" x="1795" y="1069"/>
         </scene>
         <!--Workout Details View Controller - Workout Summary-->
         <scene sceneID="Hvp-iC-Uzz">
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMe-uC-NXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2175" y="1117"/>
+            <point key="canvasLocation" x="2287" y="1069"/>
         </scene>
         <!--Table View Controller - Workout Summary-->
         <scene sceneID="hmb-vL-kfJ">
@@ -350,7 +350,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZY-Ae-HoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="1125"/>
+            <point key="canvasLocation" x="2756" y="1069"/>
         </scene>
         <!--Metric Selector View Controller - Browse by Metric-->
         <scene sceneID="Gxc-Ud-y6x">
@@ -390,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gas-0I-cnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="2309"/>
+            <point key="canvasLocation" x="1269" y="1737"/>
         </scene>
         <!--Metric Selector View Controller - Select Metric to Average-->
         <scene sceneID="wSY-go-hWA">
@@ -431,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oq-WY-qQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1264" y="3013"/>
+            <point key="canvasLocation" x="1264" y="2357"/>
         </scene>
         <!--Workout Averages Table View Controller - Average for your Metric-->
         <scene sceneID="eOf-Gu-16P">
@@ -474,7 +474,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAy-AN-Eal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="2994"/>
+            <point key="canvasLocation" x="1795" y="2357"/>
         </scene>
         <!--Select Date View Controller - Browse by Date-->
         <scene sceneID="sGx-nU-6dO">
@@ -535,7 +535,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6D-Xo-rFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1293" y="1609"/>
+            <point key="canvasLocation" x="1269" y="1069"/>
         </scene>
         <!--Select Audio Metrics View Controller - Select Metrics-->
         <scene sceneID="Xef-Du-zTK">
@@ -638,7 +638,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBf-1N-0cM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344" y="-872"/>
+            <point key="canvasLocation" x="1265" y="-252"/>
         </scene>
         <!--Audio Interval Time View Controller - Select Time Intervals for Audio Feedback-->
         <scene sceneID="uYd-zt-ZRN">
@@ -681,7 +681,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h2-aN-AC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="-884"/>
+            <point key="canvasLocation" x="1782" y="-252"/>
         </scene>
         <!--Last Workout Config View Controller - Last Workout Configuration-->
         <scene sceneID="6c2-c1-aat">
@@ -751,7 +751,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkw-yD-SS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302" y="183"/>
+            <point key="canvasLocation" x="1269" y="419"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ySr-YX-XQd">
@@ -767,7 +767,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hf-xb-NzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="183"/>
+            <point key="canvasLocation" x="1782" y="419"/>
         </scene>
         <!--Workout Progress View Controller - Workout in Progress-->
         <scene sceneID="205-GO-d8U">
@@ -834,7 +834,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2T-UC-LIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="245"/>
+            <point key="canvasLocation" x="2238" y="419"/>
         </scene>
         <!--Workout Summary View Controller - Workout Summary-->
         <scene sceneID="VGG-0P-Zhe">
@@ -900,7 +900,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-Eg-TTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3590" y="289"/>
+            <point key="canvasLocation" x="3178" y="419"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kli-b2-4GA">
@@ -923,7 +923,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rd9-D2-gqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-773" y="1204"/>
+            <point key="canvasLocation" x="-813" y="720"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lwu-Kf-1vH">
@@ -945,7 +945,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UM8-tK-TdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2978" y="245"/>
+            <point key="canvasLocation" x="2710" y="419"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -954,8 +954,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Zrx-XT-wOu"/>
         <segue reference="nof-hO-iGV"/>
-        <segue reference="3qn-qC-uEu"/>
         <segue reference="3A1-dK-45q"/>
     </inferredMetricsTieBreakers>
 </document>
