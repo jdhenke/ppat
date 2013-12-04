@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-7H-bxb">
-                                <rect key="frame" x="64" y="260" width="196" height="30"/>
+                                <rect key="frame" x="64" y="260" width="208" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Review Previous Workouts"/>
                                 <state key="normal" title="Review Previous Workouts">
